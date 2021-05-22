@@ -4,17 +4,17 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 
-namespace EasyBilling
+namespace EasyBilling.BLL.Application
 {
-    class AppManager
+    public class AppManager
     {
-        public static SqlConnection ConncetionManager;
+        public static SqlConnection ConnectionManager;
         public static void LaunchApplication()
         {
             string connectionString;
             connectionString = @"Data Source=NAVYA\RELYONDB2008R2;Initial Catalog=EasyBilling;User ID=sa;Password=reladmin@123;Integrated Security=false";
-            ConncetionManager = new SqlConnection(connectionString);
-            ConncetionManager.Open();
+            ConnectionManager = new SqlConnection(connectionString);
+            ConnectionManager.Open();
         }
     }
 }
