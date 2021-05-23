@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdminDashboard));
             this.pnlFooter = new System.Windows.Forms.Panel();
             this.lblFooter = new System.Windows.Forms.Label();
             this.menuStripTop = new System.Windows.Forms.MenuStrip();
@@ -176,12 +177,14 @@
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.pnlFooter);
             this.Controls.Add(this.menuStripTop);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStripTop;
             this.Name = "frmAdminDashboard";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin Dashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAdminDashboard_FormClosing);
+            this.Load += new System.EventHandler(this.frmAdminDashboard_Load);
             this.pnlFooter.ResumeLayout(false);
             this.pnlFooter.PerformLayout();
             this.menuStripTop.ResumeLayout(false);

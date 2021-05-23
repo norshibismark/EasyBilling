@@ -29,18 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsers));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlUsersTop = new System.Windows.Forms.Panel();
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.lblUsersTop = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
             this.lblLastName = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.lblUserName = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.txtContact = new System.Windows.Forms.TextBox();
             this.lblContact = new System.Windows.Forms.Label();
@@ -55,9 +57,9 @@
             this.grdUsers = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
             this.pnlUsersTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdUsers)).BeginInit();
@@ -115,14 +117,14 @@
             this.txtFirstName.Size = new System.Drawing.Size(174, 23);
             this.txtFirstName.TabIndex = 2;
             // 
-            // textBox1
+            // txtLastName
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(96, 103);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(174, 23);
-            this.textBox1.TabIndex = 4;
+            this.txtLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtLastName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastName.Location = new System.Drawing.Point(96, 103);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(174, 23);
+            this.txtLastName.TabIndex = 4;
             // 
             // lblLastName
             // 
@@ -172,14 +174,14 @@
             this.lblUserName.TabIndex = 7;
             this.lblUserName.Text = "User Name";
             // 
-            // textBox4
+            // txtPassword
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(96, 190);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(174, 23);
-            this.textBox4.TabIndex = 10;
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPassword.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(96, 190);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(174, 23);
+            this.txtPassword.TabIndex = 10;
             // 
             // lblPassword
             // 
@@ -298,11 +300,29 @@
             // 
             // grdUsers
             // 
+            this.grdUsers.AllowUserToAddRows = false;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.grdUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdUsers.DefaultCellStyle = dataGridViewCellStyle6;
             this.grdUsers.Location = new System.Drawing.Point(291, 76);
             this.grdUsers.Name = "grdUsers";
             this.grdUsers.Size = new System.Drawing.Size(586, 294);
             this.grdUsers.TabIndex = 21;
+            this.grdUsers.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grdUsers_RowHeaderMouseClick);
             // 
             // txtSearch
             // 
@@ -323,31 +343,19 @@
             this.lblSearch.TabIndex = 22;
             this.lblSearch.Text = "Search";
             // 
-            // btnAdd
+            // btnSave
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(96, 384);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(84, 37);
-            this.btnAdd.TabIndex = 24;
-            this.btnAdd.Text = "ADD";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(186, 384);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(84, 37);
-            this.btnUpdate.TabIndex = 25;
-            this.btnUpdate.Text = "UPDATE";
-            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnSave.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(96, 384);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(84, 37);
+            this.btnSave.TabIndex = 24;
+            this.btnSave.Text = "&SAVE";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDelete
             // 
@@ -355,12 +363,27 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(276, 384);
+            this.btnDelete.Location = new System.Drawing.Point(186, 384);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(84, 37);
             this.btnDelete.TabIndex = 26;
-            this.btnDelete.Text = "DELETE";
+            this.btnDelete.Text = "&DELETE";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnNew
+            // 
+            this.btnNew.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNew.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNew.ForeColor = System.Drawing.Color.White;
+            this.btnNew.Location = new System.Drawing.Point(276, 384);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(84, 37);
+            this.btnNew.TabIndex = 27;
+            this.btnNew.Text = "&NEW";
+            this.btnNew.UseVisualStyleBackColor = false;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // frmUsers
             // 
@@ -368,9 +391,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(884, 429);
+            this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.grdUsers);
@@ -384,13 +407,13 @@
             this.Controls.Add(this.lblAddress);
             this.Controls.Add(this.txtContact);
             this.Controls.Add(this.lblContact);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.lblFirstName);
@@ -398,8 +421,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmUsers";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Users";
+            this.Load += new System.EventHandler(this.frmUsers_Load);
             this.pnlUsersTop.ResumeLayout(false);
             this.pnlUsersTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
@@ -416,13 +441,13 @@
         private System.Windows.Forms.PictureBox pictureBoxClose;
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.TextBox txtFirstName;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label lblUserName;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox txtContact;
         private System.Windows.Forms.Label lblContact;
@@ -437,8 +462,8 @@
         private System.Windows.Forms.DataGridView grdUsers;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label lblSearch;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnNew;
     }
 }

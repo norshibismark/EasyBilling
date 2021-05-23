@@ -1,4 +1,5 @@
-﻿using EasyBilling.UI;
+﻿using EasyBilling.BLL.Application;
+using EasyBilling.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,16 @@ namespace EasyBilling
         {
             frmUsers users = new frmUsers();
             users.Show();
+        }
+
+        private void frmAdminDashboard_Load(object sender, EventArgs e)
+        {
+            AppManager.LaunchApplication();
+        }
+
+        private void frmAdminDashboard_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            AppManager.ConnectionManager.Close();
         }
     }
 }

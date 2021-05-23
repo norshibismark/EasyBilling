@@ -89,5 +89,33 @@ namespace EasyBilling.DAL
             return isSuccess;
         }
         #endregion
+        #region get max user Id
+        public int getMaxUserId()
+        {
+            int maxUserId = 0;
+            SqlCommand cmd;
+            SqlDataReader reader;
+            try
+            {
+                cmd = new SqlCommand("USP_GetUsersMaxId", AppManager.ConnectionManager);
+                cmd.CommandType = CommandType.StoredProcedure;
+                reader = cmd.ExecuteReader();
+                if (reader != null)
+                {
+                    while (reader.Read())
+                    {
+                        maxUserId = Common.ConvertToInt(reader["MAXID"]);
+                    }
+                    reader.Close();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return maxUserId;
+        }
+        #endregion
     }
+
 }
