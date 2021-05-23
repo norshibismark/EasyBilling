@@ -30,38 +30,41 @@ namespace EasyBilling.UI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            l.username = Common.ConvertToString(txtUserName.Text.Trim());
-            l.password = Common.ConvertToString(txtPassword.Text.Trim());
-            l.user_type = Common.ConvertToString(cmbUserType.Text.Trim());
-            if(dal.LoginCheck(l))
+            if (isValidated())
             {
-                MessageBox.Show("Login successfull.");
-                loggedInUser = l.username;
-                //Open respective form based on user type
-                switch (l.user_type)
+                l.username = Common.ConvertToString(txtUserName.Text.Trim());
+                l.password = Common.ConvertToString(txtPassword.Text.Trim());
+                l.user_type = Common.ConvertToString(cmbUserType.Text.Trim());
+                if (dal.LoginCheck(l))
                 {
-                    case "Admin":
-                        {
-                            frmAdminDashboard admin = new frmAdminDashboard();
-                            admin.Show();
-                            this.Hide();
-                        }
-                        break;
-                    case "User":
-                        {
-                            frmUserDashboard user = new frmUserDashboard();
-                            user.Show();
-                            this.Hide();
-                        }
-                        break;
-                    default:
-                        MessageBox.Show("User Type does not exists.");
-                        break;
+                    MessageBox.Show("Login successfull.");
+                    loggedInUser = l.username;
+                    //Open respective form based on user type
+                    switch (l.user_type)
+                    {
+                        case "Admin":
+                            {
+                                frmAdminDashboard admin = new frmAdminDashboard();
+                                admin.Show();
+                                this.Hide();
+                            }
+                            break;
+                        case "User":
+                            {
+                                frmUserDashboard user = new frmUserDashboard();
+                                user.Show();
+                                this.Hide();
+                            }
+                            break;
+                        default:
+                            MessageBox.Show("User Type does not exists.");
+                            break;
+                    }
                 }
-            }
-            else
-            {
-                MessageBox.Show("Login failed please try again.");
+                else
+                {
+                    MessageBox.Show("Login failed please try again.");
+                }
             }
         }
 
@@ -73,6 +76,30 @@ namespace EasyBilling.UI
         private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
             AppManager.ConnectionManager.Close();
+        }
+        private bool isValidated()
+        {
+            if(String.IsNullOrEmpty(txtUserName.Text.Trim()))
+            {
+                MessageBox.Show("Enter UserName");
+                txtUserName.Focus();
+                return false;
+            }
+
+            if(String.IsNullOrEmpty(txtPassword.Text.Trim()))
+            {
+                MessageBox.Show("Enter Password");
+                txtPassword.Focus();
+                return false;
+            }
+
+            if(String.IsNullOrEmpty(cmbUserType.Text.Trim()))
+            {
+                MessageBox.Show("Select UserType");
+                cmbUserType.Focus();
+                return false;
+            }
+            return true;
         }
     }
 }
