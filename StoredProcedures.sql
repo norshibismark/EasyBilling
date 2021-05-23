@@ -101,3 +101,69 @@ BEGIN
 END
 EXEC USP_LoginCheck 'Rajesh','rajesh@123','Admin'
 -------------------------------------------------------------------
+
+----CATEGORY
+
+---------------------Getting user details--------------------
+CREATE PROCEDURE USP_GetCategories
+AS
+BEGIN
+	SELECT * FROM tbl_categories
+END
+
+---------------------Inserting and updating-------------------
+CREATE PROCEDURE USP_InsertCategoriesDetails
+(
+	@id int,
+	@title varchar(50),
+	@description varchar(250),
+	@added_date datetime,
+	@added_by int
+)
+AS
+BEGIN
+	DECLARE @COUNT AS Int;
+	SET @COUNT = (SELECT COUNT(*) from tbl_categories WHERE id=@id);
+	IF(@COUNT > 0)
+		BEGIN
+			UPDATE tbl_categories SET title=@title,description=@description,added_date=@added_date,added_by=@added_by WHERE id=@id;
+		END
+	ELSE
+		BEGIN
+			INSERT INTO tbl_categories(title,description,added_date,added_by) VALUES(@title,@description,@added_date,@added_by);
+		END
+END
+
+-----------------Deleting Categories--------------------
+
+CREATE PROCEDURE USP_DeleteCategories
+(
+	@id int
+)
+AS
+BEGIN
+	DELETE FROM tbl_categories WHERE id=@id;
+END
+
+----------------Get Max Category Id---------------------
+
+CREATE PROCEDURE USP_GetCategoriesMaxId
+AS
+BEGIN
+	SELECT ISNULL(MAX(id),0) AS MAXID FROM tbl_categories
+END
+
+--EXEC USP_GetUsersMaxId
+
+------------Search users based on keyword---------------
+
+CREATE PROCEDURE USP_SearchCategories
+(
+	@keyword varchar(100)
+)
+AS
+BEGIN
+	SELECT * FROM tbl_categories WHERE CAST(id as varchar) LIKE '%' + ISNULL(@keyword,0) + '%' OR title LIKE '%'+ @keyword +'%' OR description LIKE '%'+ @keyword +'%';
+END
+
+---------------------------------------------------------

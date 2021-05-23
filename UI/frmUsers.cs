@@ -186,6 +186,13 @@ namespace EasyBilling.UI
         private void btnDelete_Click(object sender, EventArgs e)
         {
             bool isSuccess = false;
+
+            if (String.IsNullOrEmpty(txtUserId.Text.Trim()))
+            {
+                MessageBox.Show("User Id is missing");
+                return;
+            }
+
             u.id = Common.ConvertToInt(txtUserId.Text.Trim());
             isSuccess = dal.delete(u);
             if(isSuccess)
@@ -202,8 +209,11 @@ namespace EasyBilling.UI
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            DataTable dt = dal.Search(Common.ConvertToString(txtSearch.Text.Trim()));
-            grdUsers.DataSource = dt;
+            if (!String.IsNullOrEmpty(txtSearch.Text.Trim()))
+            {
+                DataTable dt = dal.Search(Common.ConvertToString(txtSearch.Text.Trim()));
+                grdUsers.DataSource = dt;
+            }
         }
     }
 }
