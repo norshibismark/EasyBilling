@@ -116,6 +116,28 @@ namespace EasyBilling.DAL
             return maxUserId;
         }
         #endregion
+        #region search users based on keyword
+        public DataTable Search(string keyword)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("USP_SearchUsers", AppManager.ConnectionManager);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("keyword", SqlDbType.VarChar).Value = keyword;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                adapter.Dispose();
+                dt = ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return dt;
+        }
+        #endregion
     }
 
 }

@@ -195,5 +195,11 @@ namespace EasyBilling.UI
                 MessageBox.Show("Failed to delete user");
             }
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            DataTable dt = dal.Search(Common.ConvertToString(txtSearch.Text.Trim()));
+            grdUsers.DataSource = dt;
+        }
     }
 }
