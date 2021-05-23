@@ -1,3 +1,7 @@
+CREATE DATABASE EasyBilling
+
+---USER
+
 ---------------------Getting user details--------------------
 CREATE PROCEDURE USP_GetUsers
 AS
@@ -54,7 +58,7 @@ BEGIN
 	SELECT ISNULL(MAX(id),0) AS MAXID FROM tbl_users
 END
 
-EXEC USP_GetUsersMaxId
+--EXEC USP_GetUsersMaxId
 
 ------------Search users based on keyword-------------
 
@@ -67,7 +71,33 @@ BEGIN
 	SELECT * FROM tbl_users WHERE CAST(id as varchar) LIKE '%' + ISNULL(@keyword,0) + '%' OR first_name LIKE '%'+ @keyword +'%' OR last_name LIKE '%'+ @keyword +'%' OR username LIKE '%'+ @keyword +'%' OR contact LIKE '%'+ @keyword +'%';
 END
 
-EXEC USP_SearchUsers '1'
+--EXEC USP_SearchUsers '1'
+------------get user Id from user name------------------
 
-------------------------------------------------------
+CREATE PROCEDURE USP_GetUserIdFromUserName
+(
+	@userName varchar(50)
+)
+AS
+BEGIN
+	SELECT id FROM tbl_users WHERE first_name=@userName;
+END
 
+--SELECT * FROM tbl_users
+-------------------------------------------------------------------
+
+-- LOGIN
+
+-------------- check user entered correct login details------------
+CREATE PROCEDURE USP_LoginCheck
+(
+	@username varchar(50),
+	@password varchar(50),
+	@user_type varchar(50)
+)
+AS
+BEGIN
+	SELECT * FROM tbl_users WHERE username=@username AND password=@password AND user_type=@user_type
+END
+EXEC USP_LoginCheck 'Rajesh','rajesh@123','Admin'
+-------------------------------------------------------------------

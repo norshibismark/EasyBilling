@@ -135,7 +135,11 @@ namespace EasyBilling.UI
                 u.gender = cmbgender.Text.Trim();
                 u.user_type = cmbUserType.Text.Trim();
                 u.added_date = DateTime.Now;
-                u.added_by = 2;
+
+                string loggedInUser = frmLogin.loggedInUser;
+                UserBLL usr = dal.getUserIdFromUserName(loggedInUser); 
+                u.added_by = usr.id;
+
                 isSuccess = dal.insertAndUpdate(u);
                 if (isSuccess)
                 {

@@ -138,6 +138,31 @@ namespace EasyBilling.DAL
             return dt;
         }
         #endregion
+        #region get user Id from user name
+        public UserBLL getUserIdFromUserName(string userName)
+        {
+            UserBLL u = new UserBLL();
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("USP_GetUserIdFromUserName", AppManager.ConnectionManager);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("userName", SqlDbType.VarChar).Value = userName;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dt);
+                adapter.Dispose();
+                if(dt.Rows.Count > 0)
+                {
+                    u.id = Common.ConvertToInt(dt.Rows[0]["id"].ToString());
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return u;
+        }
+        #endregion
     }
 
 }

@@ -45,8 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\Application\AppManager.cs" />
+    <Compile Include="BLL\LoginBLL.cs" />
     <Compile Include="BLL\UserBLL.cs" />
     <Compile Include="Common.cs" />
+    <Compile Include="DAL\LoginDAL.cs" />
     <Compile Include="DAL\UserDAL.cs" />
     <Compile Include="EasyBillingDataSet.Designer.cs">
       <AutoGen>True</AutoGen>

@@ -26,12 +26,20 @@ namespace EasyBilling
 
         private void frmAdminDashboard_Load(object sender, EventArgs e)
         {
-            AppManager.LaunchApplication();
+            //AppManager.LaunchApplication();
+            lblLoggedInUser.Text = frmLogin.loggedInUser;
         }
 
         private void frmAdminDashboard_FormClosing(object sender, FormClosingEventArgs e)
         {
-            AppManager.ConnectionManager.Close();
+            //AppManager.ConnectionManager.Close();
+        }
+
+        private void frmAdminDashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmLogin login = new frmLogin();
+            login.Show();
+            this.Hide();
         }
     }
 }
