@@ -41,5 +41,11 @@ namespace EasyBilling
             login.Show();
             this.Hide();
         }
+
+        private void categoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCategories categories = new frmCategories();
+            categories.Show();
+         }
     }
 }
