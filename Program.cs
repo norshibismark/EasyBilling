@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EasyBilling.UI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -15,7 +16,7 @@ namespace EasyBilling
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAdminDashboard());
+            Application.Run(new frmLogin());
         }
     }
 }
