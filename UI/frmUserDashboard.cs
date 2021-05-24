@@ -28,5 +28,23 @@ namespace EasyBilling
             login.Show();
             this.Hide();
         }
+
+        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPurchaseAndSales purchase = new frmPurchaseAndSales();
+            purchase.Show();
+        }
+
+        private void categoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPurchaseAndSales purchase = new frmPurchaseAndSales();
+            purchase.Show();
+        }
+
+        private void dealerAndCustomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDealerAndCustomer dealerAndCustomer = new frmDealerAndCustomer();
+            dealerAndCustomer.Show();
+        }
     }
 }
