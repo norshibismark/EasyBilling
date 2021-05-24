@@ -56,7 +56,7 @@
             this.panel1.Controls.Add(this.lblUserName);
             this.panel1.Location = new System.Drawing.Point(39, 37);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(372, 254);
+            this.panel1.Size = new System.Drawing.Size(369, 246);
             this.panel1.TabIndex = 0;
             // 
             // lblLogin
@@ -75,7 +75,7 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(74, 199);
+            this.btnLogin.Location = new System.Drawing.Point(74, 190);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(227, 39);
             this.btnLogin.TabIndex = 25;
@@ -87,7 +87,7 @@
             // 
             this.lblUserType.AutoSize = true;
             this.lblUserType.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserType.Location = new System.Drawing.Point(71, 141);
+            this.lblUserType.Location = new System.Drawing.Point(71, 132);
             this.lblUserType.Name = "lblUserType";
             this.lblUserType.Size = new System.Drawing.Size(74, 16);
             this.lblUserType.TabIndex = 24;
@@ -100,7 +100,7 @@
             this.cmbUserType.Items.AddRange(new object[] {
             "User",
             "Admin"});
-            this.cmbUserType.Location = new System.Drawing.Point(74, 160);
+            this.cmbUserType.Location = new System.Drawing.Point(74, 151);
             this.cmbUserType.Name = "cmbUserType";
             this.cmbUserType.Size = new System.Drawing.Size(227, 24);
             this.cmbUserType.TabIndex = 23;
@@ -109,7 +109,7 @@
             // 
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPassword.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(74, 108);
+            this.txtPassword.Location = new System.Drawing.Point(74, 99);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = 'x';
             this.txtPassword.Size = new System.Drawing.Size(227, 23);
@@ -119,7 +119,7 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(71, 89);
+            this.lblPassword.Location = new System.Drawing.Point(71, 80);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(70, 16);
             this.lblPassword.TabIndex = 21;
@@ -129,7 +129,7 @@
             // 
             this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUserName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserName.Location = new System.Drawing.Point(74, 61);
+            this.txtUserName.Location = new System.Drawing.Point(74, 52);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(227, 23);
             this.txtUserName.TabIndex = 20;
@@ -138,7 +138,7 @@
             // 
             this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.Location = new System.Drawing.Point(71, 42);
+            this.lblUserName.Location = new System.Drawing.Point(71, 33);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(78, 16);
             this.lblUserName.TabIndex = 19;
@@ -147,7 +147,7 @@
             // pictureBoxClose
             // 
             this.pictureBoxClose.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxClose.Image")));
-            this.pictureBoxClose.Location = new System.Drawing.Point(413, 1);
+            this.pictureBoxClose.Location = new System.Drawing.Point(413, 2);
             this.pictureBoxClose.Name = "pictureBoxClose";
             this.pictureBoxClose.Size = new System.Drawing.Size(33, 30);
             this.pictureBoxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -160,7 +160,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(449, 324);
+            this.ClientSize = new System.Drawing.Size(449, 319);
             this.Controls.Add(this.pictureBoxClose);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
