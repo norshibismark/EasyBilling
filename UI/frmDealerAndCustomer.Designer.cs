@@ -72,7 +72,7 @@
             // 
             this.lblType.AutoSize = true;
             this.lblType.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblType.Location = new System.Drawing.Point(12, 88);
+            this.lblType.Location = new System.Drawing.Point(12, 90);
             this.lblType.Name = "lblType";
             this.lblType.Size = new System.Drawing.Size(40, 16);
             this.lblType.TabIndex = 76;
@@ -106,7 +106,7 @@
             this.lblDealerAndCustomerTop.AutoSize = true;
             this.lblDealerAndCustomerTop.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDealerAndCustomerTop.ForeColor = System.Drawing.Color.White;
-            this.lblDealerAndCustomerTop.Location = new System.Drawing.Point(286, 9);
+            this.lblDealerAndCustomerTop.Location = new System.Drawing.Point(274, 9);
             this.lblDealerAndCustomerTop.Name = "lblDealerAndCustomerTop";
             this.lblDealerAndCustomerTop.Size = new System.Drawing.Size(208, 18);
             this.lblDealerAndCustomerTop.TabIndex = 1;
@@ -143,6 +143,7 @@
             this.btnSearch.TabIndex = 73;
             this.btnSearch.Text = "Sea&rch";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnNew
             // 
@@ -156,6 +157,7 @@
             this.btnNew.TabIndex = 8;
             this.btnNew.Text = "&NEW";
             this.btnNew.UseVisualStyleBackColor = false;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // btnDelete
             // 
@@ -169,6 +171,7 @@
             this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "&DELETE";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
@@ -182,6 +185,7 @@
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "&SAVE";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtSearch
             // 
@@ -216,6 +220,7 @@
             this.grdDealerAndCustomer.Name = "grdDealerAndCustomer";
             this.grdDealerAndCustomer.Size = new System.Drawing.Size(455, 210);
             this.grdDealerAndCustomer.TabIndex = 68;
+            this.grdDealerAndCustomer.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grdDealerAndCustomer_RowHeaderMouseClick);
             // 
             // txtDealerAndCustomerId
             // 
@@ -340,6 +345,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDealerAndCustomer";
+            this.Load += new System.EventHandler(this.frmDealerAndCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdDealerAndCustomer)).EndInit();
             this.pnlDealerAndCustomerTop.ResumeLayout(false);
