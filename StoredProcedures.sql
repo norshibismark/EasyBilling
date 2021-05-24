@@ -232,7 +232,74 @@ CREATE PROCEDURE USP_SearchProducts
 )
 AS
 BEGIN
-	SELECT * FROM tbl_products WHERE CAST(id as varchar) LIKE '%' + ISNULL(@keyword,0) + '%' OR name LIKE '%'+ @keyword +'%' OR CAST(category as varchar) LIKE '%'+ @keyword +'%' OR description LIKE '%'+ @keyword +'%';
+	SELECT * FROM tbl_products WHERE CAST(id as varchar) LIKE '%' + ISNULL(@keyword,0) + '%' OR name LIKE '%'+ @keyword +'%' OR category LIKE '%'+ @keyword +'%' OR description LIKE '%'+ @keyword +'%';
 END
 
----------------------------------------------------------
+----------------------------------------------------------------
+
+-----DEALER AND CUSTOMER
+
+-------------Getting dealer and customer details----------------
+CREATE PROCEDURE USP_GetDealerAndCustomerDetails
+AS
+BEGIN
+	SELECT * FROM tbl_dealer_customer
+END
+
+---------------------Inserting and updating---------------------
+CREATE PROCEDURE USP_InsertDealerAndCustomerDetails
+(
+	@id int,
+	@type varchar(50),
+	@name varchar(50),
+	@email varchar(150),
+	@contact varchar(15),
+	@address varchar(150),
+	@added_date datetime,
+	@added_by int
+)
+AS
+BEGIN
+	DECLARE @COUNT AS Int;
+	SET @COUNT = (SELECT COUNT(*) from tbl_dealer_customer WHERE id=@id);
+	IF(@COUNT > 0)
+		BEGIN
+			UPDATE tbl_dealer_customer SET type=@type,name=@name,email=@email,contact=@contact,address=@address,added_date=@added_date,added_by=@added_by WHERE id=@id;
+		END
+	ELSE
+		BEGIN
+			INSERT INTO tbl_dealer_customer(type,name,email,contact,address,added_date,added_by) VALUES(@type,@name,@email,@contact,@address,@added_date,@added_by);
+		END
+END
+
+-----------------Deleting Dealers And Customers--------------------
+
+CREATE PROCEDURE USP_DeleteDealersAndCustomers
+(
+	@id int
+)
+AS
+BEGIN
+	DELETE FROM tbl_dealer_customer WHERE id=@id;
+END
+
+----------------Get Max Delaer and Customer Id--------------------
+
+CREATE PROCEDURE USP_GetDealersAndCustomerMaxId
+AS
+BEGIN
+	SELECT ISNULL(MAX(id),0) AS MAXID FROM tbl_dealer_customer
+END
+
+------------Search dealers and customers based on keyword---------
+
+CREATE PROCEDURE USP_SearchDealersAndCustomers
+(
+	@keyword varchar(100)
+)
+AS
+BEGIN
+	SELECT * FROM tbl_dealer_customer WHERE CAST(id as varchar) LIKE '%' + ISNULL(@keyword,0) + '%' OR name LIKE '%'+ @keyword +'%' OR type LIKE '%'+ @keyword +'%' OR email LIKE '%'+ @keyword +'%' OR contact LIKE '%' + @keyword + '%' OR address LIKE '%'+ @keyword +'%';
+END
+
+------------------------------------------------------------------
