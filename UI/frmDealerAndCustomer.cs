@@ -90,6 +90,7 @@ namespace EasyBilling.UI
                 {
                     MessageBox.Show("Customer deleted successfully");
                 }
+                clearAll();
                 loadDealersAndCustomersDetailsInGrid();
             }
             else
@@ -118,44 +119,85 @@ namespace EasyBilling.UI
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            bool isSuccess = false;
-            d.id = Common.ConvertToInt(txtDealerAndCustomerId.Text.Trim());
-            d.type = Common.ConvertToString(cmbType.Text.Trim());
-            d.name = Common.ConvertToString(txtName.Text.Trim());
-            d.email = Common.ConvertToString(txtEmail.Text.Trim());
-            d.contact = Common.ConvertToString(txtContact.Text.Trim());
-            d.address = Common.ConvertToString(txtAddress.Text.Trim());
-            d.added_date = DateTime.Now;
-            string loggedInUser = frmLogin.loggedInUser;
-            UserBLL usr = udal.getUserIdFromUserName(loggedInUser);
-            d.added_by = usr.id;
+            if (isValidated())
+            {
+                bool isSuccess = false;
+                d.id = Common.ConvertToInt(txtDealerAndCustomerId.Text.Trim());
+                d.type = Common.ConvertToString(cmbType.Text.Trim());
+                d.name = Common.ConvertToString(txtName.Text.Trim());
+                d.email = Common.ConvertToString(txtEmail.Text.Trim());
+                d.contact = Common.ConvertToString(txtContact.Text.Trim());
+                d.address = Common.ConvertToString(txtAddress.Text.Trim());
+                d.added_date = DateTime.Now;
+                string loggedInUser = frmLogin.loggedInUser;
+                UserBLL usr = udal.getUserIdFromUserName(loggedInUser);
+                d.added_by = usr.id;
 
-            isSuccess = dal.insertAndUpdate(d);
-            if(isSuccess)
-            {
-                if (cmbType.Text.Trim() == "Dealer")
+                isSuccess = dal.insertAndUpdate(d);
+                if (isSuccess)
                 {
-                    MessageBox.Show("Dealer saved successfully");
+                    if (cmbType.Text.Trim() == "Dealer")
+                    {
+                        MessageBox.Show("Dealer saved successfully");
+                    }
+                    else if (cmbType.Text.Trim() == "Customer")
+                    {
+                        MessageBox.Show("Customer saved successfully");
+                    }
                 }
-                else if (cmbType.Text.Trim() == "Customer")
+                else
                 {
-                    MessageBox.Show("Customer saved successfully");
+                    if (cmbType.Text.Trim() == "Dealer")
+                    {
+                        MessageBox.Show("Dealer save failed");
+                    }
+                    else if (cmbType.Text.Trim() == "Customer")
+                    {
+                        MessageBox.Show("Customer save failed");
+                    }
                 }
+                clearAll();
+                loadDealersAndCustomersDetailsInGrid();
             }
-            else
-            {
-                if (cmbType.Text.Trim() == "Dealer")
-                {
-                    MessageBox.Show("Dealer save failed");
-                }
-                else if (cmbType.Text.Trim() == "Customer")
-                {
-                    MessageBox.Show("Customer save failed");
-                }
-            }
-            clearAll();
-            loadDealersAndCustomersDetailsInGrid();
         }
 
+        private bool isValidated()
+        {
+            if(String.IsNullOrEmpty(cmbType.Text.Trim()))
+            {
+                MessageBox.Show("Select type");
+                cmbType.Focus();
+                return false;
+            }
+
+            if(String.IsNullOrEmpty(txtName.Text.Trim()))
+            {
+                MessageBox.Show("Enter Name");
+                txtName.Focus();
+                return false;
+            }
+
+            if(String.IsNullOrEmpty(txtEmail.Text.Trim()))
+            {
+                MessageBox.Show("Enter Email Id");
+                txtEmail.Focus();
+                return false;
+            }
+
+            if(String.IsNullOrEmpty(txtContact.Text.Trim()))
+            {
+                MessageBox.Show("Enter contact");
+                txtContact.Focus();
+                return false;
+            }
+
+            if(String.IsNullOrEmpty(txtAddress.Text.Trim()))
+            {
+                MessageBox.Show("Enter address");
+                txtAddress.Focus();
+                return false;
+            }
+            return true;
+        }
     }
 }

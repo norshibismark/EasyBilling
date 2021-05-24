@@ -44,8 +44,8 @@ namespace EasyBilling.DAL
                 cmd.Parameters.Add("id", SqlDbType.Int).Value = d.id;
                 cmd.Parameters.Add("type", SqlDbType.VarChar).Value = d.type;
                 cmd.Parameters.Add("name", SqlDbType.VarChar).Value = d.name;
-                cmd.Parameters.Add("email", SqlDbType.Decimal).Value = d.email;
-                cmd.Parameters.Add("contact", SqlDbType.Decimal).Value = d.contact;
+                cmd.Parameters.Add("email", SqlDbType.VarChar).Value = d.email;
+                cmd.Parameters.Add("contact", SqlDbType.VarChar).Value = d.contact;
                 cmd.Parameters.Add("address", SqlDbType.VarChar).Value = d.address;
                 cmd.Parameters.Add("added_date", SqlDbType.DateTime).Value = d.added_date;
                 cmd.Parameters.Add("added_by", SqlDbType.Int).Value = d.added_by;
