@@ -10,15 +10,15 @@ using System.Windows.Forms;
 
 namespace EasyBilling.DAL
 {
-    class CategoriesDAL
+    class ProductsDAL
     {
-        #region select data from categories table
+        #region select data from products table
         public DataTable Select()
         {
             DataTable dt = new DataTable();
             try
             {
-                SqlCommand cmd = new SqlCommand("USP_GetCategoriesDetails", AppManager.ConnectionManager);
+                SqlCommand cmd = new SqlCommand("USP_GetProductDetails", AppManager.ConnectionManager);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
@@ -34,18 +34,21 @@ namespace EasyBilling.DAL
         }
         #endregion
         #region insert and update data
-        public bool insertAndUpdate(CategoriesBLL c)
+        public bool insertAndUpdate(ProductsBLL p)
         {
             bool isSuccess = false;
             try
             {
-                SqlCommand cmd = new SqlCommand("USP_InsertCategoriesDetails", AppManager.ConnectionManager);
+                SqlCommand cmd = new SqlCommand("USP_InsertProductDetails", AppManager.ConnectionManager);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("id", SqlDbType.Int).Value = c.id;
-                cmd.Parameters.Add("title", SqlDbType.VarChar).Value = c.title;
-                cmd.Parameters.Add("description", SqlDbType.VarChar).Value = c.description;
-                cmd.Parameters.Add("added_date", SqlDbType.DateTime).Value = c.added_date;
-                cmd.Parameters.Add("added_by", SqlDbType.Int).Value = c.added_by;
+                cmd.Parameters.Add("id", SqlDbType.Int).Value = p.id;
+                cmd.Parameters.Add("name", SqlDbType.VarChar).Value = p.name;
+                cmd.Parameters.Add("category", SqlDbType.VarChar).Value = p.category;
+                cmd.Parameters.Add("rate", SqlDbType.Decimal).Value = p.rate;
+                cmd.Parameters.Add("qty", SqlDbType.Decimal).Value = p.qty;
+                cmd.Parameters.Add("description", SqlDbType.VarChar).Value = p.description;
+                cmd.Parameters.Add("added_date", SqlDbType.DateTime).Value = p.added_date;
+                cmd.Parameters.Add("added_by", SqlDbType.Int).Value = p.added_by;
                 int row = cmd.ExecuteNonQuery();
                 if (row > 0)
                 {
@@ -59,15 +62,15 @@ namespace EasyBilling.DAL
             return isSuccess;
         }
         #endregion
-        #region delete categories
-        public bool delete(CategoriesBLL c)
+        #region delete products
+        public bool delete(ProductsBLL p)
         {
             bool isSuccess = false;
             try
             {
-                SqlCommand cmd = new SqlCommand("USP_DeleteCategories", AppManager.ConnectionManager);
+                SqlCommand cmd = new SqlCommand("USP_DeleteProducts", AppManager.ConnectionManager);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("id", SqlDbType.Int).Value = c.id;
+                cmd.Parameters.Add("id", SqlDbType.Int).Value = p.id;
                 int row = cmd.ExecuteNonQuery();
                 if (row > 0)
                 {
@@ -81,13 +84,13 @@ namespace EasyBilling.DAL
             return isSuccess;
         }
         #endregion
-        #region search categories based on keyword
+        #region search products based on keyword
         public DataTable Search(string keyword)
         {
             DataTable dt = new DataTable();
             try
             {
-                SqlCommand cmd = new SqlCommand("USP_SearchCategories", AppManager.ConnectionManager);
+                SqlCommand cmd = new SqlCommand("USP_SearchProducts", AppManager.ConnectionManager);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("keyword", SqlDbType.VarChar).Value = keyword;
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -103,22 +106,22 @@ namespace EasyBilling.DAL
             return dt;
         }
         #endregion
-        #region get max category Id
-        public int getMaxCategoryId()
+        #region get max product Id
+        public int getMaxProductId()
         {
-            int maxCategoryId = 0;
+            int maxProductId = 0;
             SqlCommand cmd;
             SqlDataReader reader;
             try
             {
-                cmd = new SqlCommand("USP_GetCategoriesMaxId", AppManager.ConnectionManager);
+                cmd = new SqlCommand("USP_GetProductsMaxId", AppManager.ConnectionManager);
                 cmd.CommandType = CommandType.StoredProcedure;
                 reader = cmd.ExecuteReader();
                 if (reader != null)
                 {
                     while (reader.Read())
                     {
-                        maxCategoryId = Common.ConvertToInt(reader["MAXID"]);
+                        maxProductId = Common.ConvertToInt(reader["MAXID"]);
                     }
                     reader.Close();
                 }
@@ -127,7 +130,7 @@ namespace EasyBilling.DAL
             {
                 MessageBox.Show(ex.Message);
             }
-            return maxCategoryId;
+            return maxProductId;
         }
         #endregion
     }

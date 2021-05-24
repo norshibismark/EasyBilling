@@ -3,7 +3,7 @@ CREATE DATABASE EasyBilling
 ---USER
 
 ---------------------Getting user details--------------------
-CREATE PROCEDURE USP_GetUsers
+CREATE PROCEDURE USP_GetUsersDetails
 AS
 BEGIN
 	SELECT * FROM tbl_users
@@ -104,8 +104,8 @@ EXEC USP_LoginCheck 'Rajesh','rajesh@123','Admin'
 
 ----CATEGORY
 
----------------------Getting user details--------------------
-CREATE PROCEDURE USP_GetCategories
+---------------------Getting categories details--------------------
+CREATE PROCEDURE USP_GetCategoriesDetails
 AS
 BEGIN
 	SELECT * FROM tbl_categories
@@ -155,7 +155,7 @@ END
 
 --EXEC USP_GetUsersMaxId
 
-------------Search users based on keyword---------------
+------------Search categories based on keyword---------------
 
 CREATE PROCEDURE USP_SearchCategories
 (
@@ -164,6 +164,75 @@ CREATE PROCEDURE USP_SearchCategories
 AS
 BEGIN
 	SELECT * FROM tbl_categories WHERE CAST(id as varchar) LIKE '%' + ISNULL(@keyword,0) + '%' OR title LIKE '%'+ @keyword +'%' OR description LIKE '%'+ @keyword +'%';
+END
+
+---------------------------------------------------------
+
+----- PRODUCT
+
+---------------------Getting product details--------------------
+CREATE PROCEDURE USP_GetProductDetails
+AS
+BEGIN
+	SELECT * FROM tbl_products
+END
+
+---------------------Inserting and updating-------------------
+CREATE PROCEDURE USP_InsertProductDetails
+(
+	@id int,
+	@name varchar(50),
+	@category varchar(50),
+	@description varchar(250),
+	@rate numeric(18,2),
+	@qty numeric(18,2),
+	@added_date datetime,
+	@added_by int
+)
+AS
+BEGIN
+	DECLARE @COUNT AS Int;
+	SET @COUNT = (SELECT COUNT(*) from tbl_products WHERE id=@id);
+	IF(@COUNT > 0)
+		BEGIN
+			UPDATE tbl_products SET name=@name,category=@category,description=@description,rate=@rate,qty=@qty,added_date=@added_date,added_by=@added_by WHERE id=@id;
+		END
+	ELSE
+		BEGIN
+			INSERT INTO tbl_products(name,category,description,rate,qty,added_date,added_by) VALUES(@name,@category,@description,@rate,@qty,@added_date,@added_by);
+		END
+END
+
+-----------------Deleting Products--------------------
+
+CREATE PROCEDURE USP_DeleteProducts
+(
+	@id int
+)
+AS
+BEGIN
+	DELETE FROM tbl_products WHERE id=@id;
+END
+
+----------------Get Max Product Id---------------------
+
+CREATE PROCEDURE USP_GetProductsMaxId
+AS
+BEGIN
+	SELECT ISNULL(MAX(id),0) AS MAXID FROM tbl_products
+END
+
+--EXEC USP_GetProductsMaxId
+
+------------Search Products based on keyword---------------
+
+CREATE PROCEDURE USP_SearchProducts
+(
+	@keyword varchar(100)
+)
+AS
+BEGIN
+	SELECT * FROM tbl_products WHERE CAST(id as varchar) LIKE '%' + ISNULL(@keyword,0) + '%' OR name LIKE '%'+ @keyword +'%' OR CAST(category as varchar) LIKE '%'+ @keyword +'%' OR description LIKE '%'+ @keyword +'%';
 END
 
 ---------------------------------------------------------

@@ -19,7 +19,7 @@ namespace EasyBilling.DAL
             DataTable dt = new DataTable();
             try
             {
-                SqlCommand cmd = new SqlCommand("USP_GetUsers", AppManager.ConnectionManager);
+                SqlCommand cmd = new SqlCommand("USP_GetUsersDetails", AppManager.ConnectionManager);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();

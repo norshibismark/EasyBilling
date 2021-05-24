@@ -29,7 +29,7 @@ namespace EasyBilling.UI
 
         private void frmCategories_Load(object sender, EventArgs e)
         {
-            txtCategoryId.Text = Common.ConvertToString(dal.getMaxUserId() + 1);
+            txtCategoryId.Text = Common.ConvertToString(dal.getMaxCategoryId() + 1);
             loadCategoriesInGrid();
         }
 
@@ -51,7 +51,7 @@ namespace EasyBilling.UI
         {
             txtTitle.Text = "";
             txtDescription.Text = "";
-            txtCategoryId.Text = Common.ConvertToString(dal.getMaxUserId() + 1);
+            txtCategoryId.Text = Common.ConvertToString(dal.getMaxCategoryId() + 1);
             txtTitle.Focus();
         }
 
@@ -139,6 +139,8 @@ namespace EasyBilling.UI
             {
                 MessageBox.Show("Failed to delete categories");
             }
+            clearAll();
+            loadCategoriesInGrid();
         }
 
         private void grdCategories_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
