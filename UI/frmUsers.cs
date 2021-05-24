@@ -214,6 +214,10 @@ namespace EasyBilling.UI
                 DataTable dt = dal.Search(Common.ConvertToString(txtSearch.Text.Trim()));
                 grdUsers.DataSource = dt;
             }
+            else
+            {
+                loadUserDetailsInGrid();
+            }
         }
     }
 }

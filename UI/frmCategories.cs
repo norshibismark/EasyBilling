@@ -15,6 +15,8 @@ namespace EasyBilling.UI
     {
         CategoriesBLL c = new CategoriesBLL();
         CategoriesDAL dal = new CategoriesDAL();
+        UserDAL userDal = new UserDAL();
+
         public frmCategories()
         {
             InitializeComponent();
@@ -80,7 +82,27 @@ namespace EasyBilling.UI
         {
             if(isValidated())
             {
+                bool isSuccess = false;
+                c.id = Common.ConvertToInt(txtCategoryId.Text.Trim());
+                c.title = Common.ConvertToString(txtTitle.Text.Trim());
+                c.description = Common.ConvertToString(txtDescription.Text.Trim());
+                c.added_date = DateTime.Now;
 
+                string loggedInUser = frmLogin.loggedInUser;
+                UserBLL usr = userDal.getUserIdFromUserName(loggedInUser);
+                c.added_by = usr.id;
+
+                isSuccess = dal.insertAndUpdate(c);
+                if(isSuccess)
+                {
+                    MessageBox.Show("Category saved successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Failed to insert category");
+                }
+                clearAll();
+                loadCategoriesInGrid();
             }
         }
 
@@ -90,6 +112,10 @@ namespace EasyBilling.UI
             {
                 DataTable dt = dal.Search(Common.ConvertToString(txtSearch.Text.Trim()));
                 grdCategories.DataSource = dt;
+            }
+            else
+            {
+                loadCategoriesInGrid();
             }
         }
 
@@ -113,6 +139,14 @@ namespace EasyBilling.UI
             {
                 MessageBox.Show("Failed to delete categories");
             }
+        }
+
+        private void grdCategories_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            txtCategoryId.Text = Common.ConvertToString(grdCategories.Rows[rowIndex].Cells["id"].Value);
+            txtTitle.Text = Common.ConvertToString(grdCategories.Rows[rowIndex].Cells["title"].Value);
+            txtDescription.Text = Common.ConvertToString(grdCategories.Rows[rowIndex].Cells["description"].Value);
         }
     }
 }
