@@ -53,5 +53,11 @@ namespace EasyBilling
             frmProducts product = new frmProducts();
             product.Show();
         }
+
+        private void dealerAndCustomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDealerAndCustomer dealerAndCustomer = new frmDealerAndCustomer();
+            dealerAndCustomer.Show();
+        }
     }
 }
