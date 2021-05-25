@@ -261,7 +261,7 @@
             this.lblDealerAndCustomerDetails.AutoSize = true;
             this.lblDealerAndCustomerDetails.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDealerAndCustomerDetails.ForeColor = System.Drawing.Color.White;
-            this.lblDealerAndCustomerDetails.Location = new System.Drawing.Point(3, 5);
+            this.lblDealerAndCustomerDetails.Location = new System.Drawing.Point(10, 5);
             this.lblDealerAndCustomerDetails.Name = "lblDealerAndCustomerDetails";
             this.lblDealerAndCustomerDetails.Size = new System.Drawing.Size(233, 14);
             this.lblDealerAndCustomerDetails.TabIndex = 2;
@@ -399,7 +399,7 @@
             this.lblProductDetails.AutoSize = true;
             this.lblProductDetails.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductDetails.ForeColor = System.Drawing.Color.White;
-            this.lblProductDetails.Location = new System.Drawing.Point(3, 10);
+            this.lblProductDetails.Location = new System.Drawing.Point(9, 13);
             this.lblProductDetails.Name = "lblProductDetails";
             this.lblProductDetails.Size = new System.Drawing.Size(135, 14);
             this.lblProductDetails.TabIndex = 3;
@@ -434,7 +434,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grdAddedProducts.DefaultCellStyle = dataGridViewCellStyle2;
-            this.grdAddedProducts.Location = new System.Drawing.Point(13, 30);
+            this.grdAddedProducts.Location = new System.Drawing.Point(12, 30);
             this.grdAddedProducts.Name = "grdAddedProducts";
             this.grdAddedProducts.Size = new System.Drawing.Size(455, 228);
             this.grdAddedProducts.TabIndex = 69;
@@ -444,7 +444,7 @@
             this.lblAddedProducts.AutoSize = true;
             this.lblAddedProducts.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddedProducts.ForeColor = System.Drawing.Color.White;
-            this.lblAddedProducts.Location = new System.Drawing.Point(10, 13);
+            this.lblAddedProducts.Location = new System.Drawing.Point(9, 13);
             this.lblAddedProducts.Name = "lblAddedProducts";
             this.lblAddedProducts.Size = new System.Drawing.Size(133, 14);
             this.lblAddedProducts.TabIndex = 4;
