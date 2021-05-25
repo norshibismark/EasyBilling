@@ -52,12 +52,16 @@
     <Compile Include="BLL\DealerAndCustomerBLL.cs" />
     <Compile Include="BLL\LoginBLL.cs" />
     <Compile Include="BLL\ProductsBLL.cs" />
+    <Compile Include="BLL\TransactionDetailBLL.cs" />
+    <Compile Include="BLL\TransactionsBLL.cs" />
     <Compile Include="BLL\UserBLL.cs" />
     <Compile Include="Common.cs" />
     <Compile Include="DAL\CategoriesDAL.cs" />
     <Compile Include="DAL\DealerAndCustomerDAL.cs" />
     <Compile Include="DAL\LoginDAL.cs" />
     <Compile Include="DAL\ProductsDAL.cs" />
+    <Compile Include="DAL\TransactionDAL.cs" />
+    <Compile Include="DAL\TrasactionDetailDAL.cs" />
     <Compile Include="DAL\UserDAL.cs" />
     <Compile Include="EasyBillingDataSet.Designer.cs">
       <AutoGen>True</AutoGen>

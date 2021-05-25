@@ -17,6 +17,8 @@ namespace EasyBilling
             InitializeComponent();
         }
 
+        //set public static method to specify whether the form is purchase or sales
+        public static string transactionType;
         private void frmUserDashboard_Load(object sender, EventArgs e)
         {
             lblLoggedInUser.Text = frmLogin.loggedInUser;
@@ -29,15 +31,17 @@ namespace EasyBilling
             this.Hide();
         }
 
-        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        private void purchaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            transactionType = "PURCHASE";
             frmPurchaseAndSales purchase = new frmPurchaseAndSales();
             purchase.Show();
         }
-
-        private void categoryToolStripMenuItem_Click(object sender, EventArgs e)
+         
+        private void salesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmPurchaseAndSales purchase = new frmPurchaseAndSales();
+            transactionType = "SALES";
+            frmPurchaseAndSales purchase = new frmPurchaseAndSales(); 
             purchase.Show();
         }
 

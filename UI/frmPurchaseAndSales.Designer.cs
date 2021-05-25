@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPurchaseAndSales));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlPurchaseAndSalesTop = new System.Windows.Forms.Panel();
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.lblPurchaseAndSalesTop = new System.Windows.Forms.Label();
@@ -52,7 +53,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.lblQuantity = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtRate = new System.Windows.Forms.TextBox();
             this.lblRate = new System.Windows.Forms.Label();
             this.txtInventory = new System.Windows.Forms.TextBox();
             this.lblInventory = new System.Windows.Forms.Label();
@@ -79,6 +80,7 @@
             this.txtSubTotal = new System.Windows.Forms.TextBox();
             this.lblSubTotal = new System.Windows.Forms.Label();
             this.lblCalculationDetails = new System.Windows.Forms.Label();
+            this.toolTipPurchaseAndSales = new System.Windows.Forms.ToolTip(this.components);
             this.pnlPurchaseAndSalesTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
             this.pnlDealerAndCustomer.SuspendLayout();
@@ -115,7 +117,7 @@
             this.lblPurchaseAndSalesTop.AutoSize = true;
             this.lblPurchaseAndSalesTop.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPurchaseAndSalesTop.ForeColor = System.Drawing.Color.White;
-            this.lblPurchaseAndSalesTop.Location = new System.Drawing.Point(398, 9);
+            this.lblPurchaseAndSalesTop.Location = new System.Drawing.Point(440, 9);
             this.lblPurchaseAndSalesTop.Name = "lblPurchaseAndSalesTop";
             this.lblPurchaseAndSalesTop.Size = new System.Drawing.Size(192, 18);
             this.lblPurchaseAndSalesTop.TabIndex = 1;
@@ -145,7 +147,7 @@
             // 
             this.dtpBillDate.CalendarFont = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpBillDate.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBillDate.Location = new System.Drawing.Point(815, 34);
+            this.dtpBillDate.Location = new System.Drawing.Point(815, 36);
             this.dtpBillDate.Name = "dtpBillDate";
             this.dtpBillDate.Size = new System.Drawing.Size(150, 22);
             this.dtpBillDate.TabIndex = 87;
@@ -154,7 +156,7 @@
             // 
             this.lblBillDate.AutoSize = true;
             this.lblBillDate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBillDate.Location = new System.Drawing.Point(812, 13);
+            this.lblBillDate.Location = new System.Drawing.Point(812, 15);
             this.lblBillDate.Name = "lblBillDate";
             this.lblBillDate.Size = new System.Drawing.Size(61, 16);
             this.lblBillDate.TabIndex = 86;
@@ -164,7 +166,7 @@
             // 
             this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAddress.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.Location = new System.Drawing.Point(606, 13);
+            this.txtAddress.Location = new System.Drawing.Point(606, 15);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(193, 67);
@@ -174,7 +176,7 @@
             // 
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(540, 34);
+            this.lblAddress.Location = new System.Drawing.Point(540, 36);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(60, 16);
             this.lblAddress.TabIndex = 85;
@@ -184,7 +186,7 @@
             // 
             this.lblContact.AutoSize = true;
             this.lblContact.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContact.Location = new System.Drawing.Point(272, 58);
+            this.lblContact.Location = new System.Drawing.Point(272, 60);
             this.lblContact.Name = "lblContact";
             this.lblContact.Size = new System.Drawing.Size(61, 16);
             this.lblContact.TabIndex = 83;
@@ -194,7 +196,7 @@
             // 
             this.txtContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtContact.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContact.Location = new System.Drawing.Point(335, 53);
+            this.txtContact.Location = new System.Drawing.Point(335, 55);
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(196, 23);
             this.txtContact.TabIndex = 82;
@@ -203,7 +205,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(272, 26);
+            this.lblEmail.Location = new System.Drawing.Point(272, 28);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(41, 16);
             this.lblEmail.TabIndex = 81;
@@ -213,7 +215,7 @@
             // 
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEmail.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(335, 24);
+            this.txtEmail.Location = new System.Drawing.Point(335, 26);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(196, 23);
             this.txtEmail.TabIndex = 79;
@@ -222,7 +224,7 @@
             // 
             this.txtDealerAndCustomerName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDealerAndCustomerName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDealerAndCustomerName.Location = new System.Drawing.Point(69, 55);
+            this.txtDealerAndCustomerName.Location = new System.Drawing.Point(69, 57);
             this.txtDealerAndCustomerName.Name = "txtDealerAndCustomerName";
             this.txtDealerAndCustomerName.Size = new System.Drawing.Size(193, 23);
             this.txtDealerAndCustomerName.TabIndex = 78;
@@ -231,7 +233,7 @@
             // 
             this.lblDealerAndCustomerName.AutoSize = true;
             this.lblDealerAndCustomerName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDealerAndCustomerName.Location = new System.Drawing.Point(10, 60);
+            this.lblDealerAndCustomerName.Location = new System.Drawing.Point(10, 62);
             this.lblDealerAndCustomerName.Name = "lblDealerAndCustomerName";
             this.lblDealerAndCustomerName.Size = new System.Drawing.Size(44, 16);
             this.lblDealerAndCustomerName.TabIndex = 80;
@@ -241,7 +243,7 @@
             // 
             this.lblDealerAndCustomerSearch.AutoSize = true;
             this.lblDealerAndCustomerSearch.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDealerAndCustomerSearch.Location = new System.Drawing.Point(9, 24);
+            this.lblDealerAndCustomerSearch.Location = new System.Drawing.Point(9, 26);
             this.lblDealerAndCustomerSearch.Name = "lblDealerAndCustomerSearch";
             this.lblDealerAndCustomerSearch.Size = new System.Drawing.Size(54, 16);
             this.lblDealerAndCustomerSearch.TabIndex = 76;
@@ -251,17 +253,18 @@
             // 
             this.txtDealerAndCustomerSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDealerAndCustomerSearch.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDealerAndCustomerSearch.Location = new System.Drawing.Point(69, 22);
+            this.txtDealerAndCustomerSearch.Location = new System.Drawing.Point(69, 24);
             this.txtDealerAndCustomerSearch.Name = "txtDealerAndCustomerSearch";
             this.txtDealerAndCustomerSearch.Size = new System.Drawing.Size(193, 23);
             this.txtDealerAndCustomerSearch.TabIndex = 75;
+            this.txtDealerAndCustomerSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDealerAndCustomerSearch_KeyPress);
             // 
             // lblDealerAndCustomerDetails
             // 
             this.lblDealerAndCustomerDetails.AutoSize = true;
             this.lblDealerAndCustomerDetails.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDealerAndCustomerDetails.ForeColor = System.Drawing.Color.White;
-            this.lblDealerAndCustomerDetails.Location = new System.Drawing.Point(10, 5);
+            this.lblDealerAndCustomerDetails.Location = new System.Drawing.Point(9, 5);
             this.lblDealerAndCustomerDetails.Name = "lblDealerAndCustomerDetails";
             this.lblDealerAndCustomerDetails.Size = new System.Drawing.Size(233, 14);
             this.lblDealerAndCustomerDetails.TabIndex = 2;
@@ -272,7 +275,7 @@
             this.pnlProductDetails.Controls.Add(this.btnAdd);
             this.pnlProductDetails.Controls.Add(this.txtQuantity);
             this.pnlProductDetails.Controls.Add(this.lblQuantity);
-            this.pnlProductDetails.Controls.Add(this.textBox1);
+            this.pnlProductDetails.Controls.Add(this.txtRate);
             this.pnlProductDetails.Controls.Add(this.lblRate);
             this.pnlProductDetails.Controls.Add(this.txtInventory);
             this.pnlProductDetails.Controls.Add(this.lblInventory);
@@ -283,7 +286,7 @@
             this.pnlProductDetails.Controls.Add(this.lblProductDetails);
             this.pnlProductDetails.Location = new System.Drawing.Point(12, 147);
             this.pnlProductDetails.Name = "pnlProductDetails";
-            this.pnlProductDetails.Size = new System.Drawing.Size(973, 100);
+            this.pnlProductDetails.Size = new System.Drawing.Size(973, 89);
             this.pnlProductDetails.TabIndex = 64;
             // 
             // btnAdd
@@ -292,18 +295,19 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(815, 30);
+            this.btnAdd.Location = new System.Drawing.Point(815, 27);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(84, 37);
             this.btnAdd.TabIndex = 89;
             this.btnAdd.Text = "&ADD";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtQuantity
             // 
             this.txtQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtQuantity.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantity.Location = new System.Drawing.Point(606, 59);
+            this.txtQuantity.Location = new System.Drawing.Point(606, 56);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(193, 23);
             this.txtQuantity.TabIndex = 87;
@@ -312,26 +316,26 @@
             // 
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantity.Location = new System.Drawing.Point(540, 61);
+            this.lblQuantity.Location = new System.Drawing.Point(540, 58);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(65, 16);
             this.lblQuantity.TabIndex = 88;
             this.lblQuantity.Text = "Quantity";
             // 
-            // textBox1
+            // txtRate
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(606, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(193, 23);
-            this.textBox1.TabIndex = 85;
+            this.txtRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRate.Location = new System.Drawing.Point(606, 27);
+            this.txtRate.Name = "txtRate";
+            this.txtRate.Size = new System.Drawing.Size(193, 23);
+            this.txtRate.TabIndex = 85;
             // 
             // lblRate
             // 
             this.lblRate.AutoSize = true;
             this.lblRate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRate.Location = new System.Drawing.Point(540, 32);
+            this.lblRate.Location = new System.Drawing.Point(540, 29);
             this.lblRate.Name = "lblRate";
             this.lblRate.Size = new System.Drawing.Size(38, 16);
             this.lblRate.TabIndex = 86;
@@ -341,7 +345,7 @@
             // 
             this.txtInventory.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtInventory.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInventory.Location = new System.Drawing.Point(335, 60);
+            this.txtInventory.Location = new System.Drawing.Point(335, 57);
             this.txtInventory.Name = "txtInventory";
             this.txtInventory.Size = new System.Drawing.Size(193, 23);
             this.txtInventory.TabIndex = 83;
@@ -350,7 +354,7 @@
             // 
             this.lblInventory.AutoSize = true;
             this.lblInventory.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInventory.Location = new System.Drawing.Point(257, 62);
+            this.lblInventory.Location = new System.Drawing.Point(257, 59);
             this.lblInventory.Name = "lblInventory";
             this.lblInventory.Size = new System.Drawing.Size(72, 16);
             this.lblInventory.TabIndex = 84;
@@ -360,7 +364,7 @@
             // 
             this.txtProductDetailsName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProductDetailsName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductDetailsName.Location = new System.Drawing.Point(335, 30);
+            this.txtProductDetailsName.Location = new System.Drawing.Point(335, 27);
             this.txtProductDetailsName.Name = "txtProductDetailsName";
             this.txtProductDetailsName.Size = new System.Drawing.Size(193, 23);
             this.txtProductDetailsName.TabIndex = 81;
@@ -369,7 +373,7 @@
             // 
             this.lblProductDetailsName.AutoSize = true;
             this.lblProductDetailsName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductDetailsName.Location = new System.Drawing.Point(272, 32);
+            this.lblProductDetailsName.Location = new System.Drawing.Point(272, 29);
             this.lblProductDetailsName.Name = "lblProductDetailsName";
             this.lblProductDetailsName.Size = new System.Drawing.Size(44, 16);
             this.lblProductDetailsName.TabIndex = 82;
@@ -379,7 +383,7 @@
             // 
             this.lblProductDetailsSearch.AutoSize = true;
             this.lblProductDetailsSearch.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductDetailsSearch.Location = new System.Drawing.Point(9, 32);
+            this.lblProductDetailsSearch.Location = new System.Drawing.Point(9, 29);
             this.lblProductDetailsSearch.Name = "lblProductDetailsSearch";
             this.lblProductDetailsSearch.Size = new System.Drawing.Size(54, 16);
             this.lblProductDetailsSearch.TabIndex = 78;
@@ -389,17 +393,18 @@
             // 
             this.txtProductDetailsSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProductDetailsSearch.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductDetailsSearch.Location = new System.Drawing.Point(69, 30);
+            this.txtProductDetailsSearch.Location = new System.Drawing.Point(69, 27);
             this.txtProductDetailsSearch.Name = "txtProductDetailsSearch";
             this.txtProductDetailsSearch.Size = new System.Drawing.Size(193, 23);
             this.txtProductDetailsSearch.TabIndex = 77;
+            this.txtProductDetailsSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductDetailsSearch_KeyPress);
             // 
             // lblProductDetails
             // 
             this.lblProductDetails.AutoSize = true;
             this.lblProductDetails.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductDetails.ForeColor = System.Drawing.Color.White;
-            this.lblProductDetails.Location = new System.Drawing.Point(9, 13);
+            this.lblProductDetails.Location = new System.Drawing.Point(10, 5);
             this.lblProductDetails.Name = "lblProductDetails";
             this.lblProductDetails.Size = new System.Drawing.Size(135, 14);
             this.lblProductDetails.TabIndex = 3;
@@ -409,7 +414,7 @@
             // 
             this.pnlAddedProducts.Controls.Add(this.grdAddedProducts);
             this.pnlAddedProducts.Controls.Add(this.lblAddedProducts);
-            this.pnlAddedProducts.Location = new System.Drawing.Point(12, 253);
+            this.pnlAddedProducts.Location = new System.Drawing.Point(12, 246);
             this.pnlAddedProducts.Name = "pnlAddedProducts";
             this.pnlAddedProducts.Size = new System.Drawing.Size(481, 270);
             this.pnlAddedProducts.TabIndex = 65;
@@ -417,23 +422,23 @@
             // grdAddedProducts
             // 
             this.grdAddedProducts.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdAddedProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdAddedProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.grdAddedProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdAddedProducts.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdAddedProducts.DefaultCellStyle = dataGridViewCellStyle18;
             this.grdAddedProducts.Location = new System.Drawing.Point(12, 30);
             this.grdAddedProducts.Name = "grdAddedProducts";
             this.grdAddedProducts.Size = new System.Drawing.Size(455, 228);
@@ -444,7 +449,7 @@
             this.lblAddedProducts.AutoSize = true;
             this.lblAddedProducts.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddedProducts.ForeColor = System.Drawing.Color.White;
-            this.lblAddedProducts.Location = new System.Drawing.Point(9, 13);
+            this.lblAddedProducts.Location = new System.Drawing.Point(9, 7);
             this.lblAddedProducts.Name = "lblAddedProducts";
             this.lblAddedProducts.Size = new System.Drawing.Size(133, 14);
             this.lblAddedProducts.TabIndex = 4;
@@ -466,7 +471,7 @@
             this.pnlCalculationDetails.Controls.Add(this.txtSubTotal);
             this.pnlCalculationDetails.Controls.Add(this.lblSubTotal);
             this.pnlCalculationDetails.Controls.Add(this.lblCalculationDetails);
-            this.pnlCalculationDetails.Location = new System.Drawing.Point(499, 253);
+            this.pnlCalculationDetails.Location = new System.Drawing.Point(499, 246);
             this.pnlCalculationDetails.Name = "pnlCalculationDetails";
             this.pnlCalculationDetails.Size = new System.Drawing.Size(486, 270);
             this.pnlCalculationDetails.TabIndex = 66;
@@ -489,7 +494,7 @@
             // 
             this.txtReturnAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txtReturnAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtReturnAmount.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReturnAmount.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtReturnAmount.ForeColor = System.Drawing.Color.DarkRed;
             this.txtReturnAmount.Location = new System.Drawing.Point(119, 187);
             this.txtReturnAmount.Name = "txtReturnAmount";
@@ -515,6 +520,7 @@
             this.txtPaidAmount.Name = "txtPaidAmount";
             this.txtPaidAmount.Size = new System.Drawing.Size(193, 23);
             this.txtPaidAmount.TabIndex = 95;
+            this.txtPaidAmount.TextChanged += new System.EventHandler(this.txtPaidAmount_TextChanged);
             // 
             // lblPaidAmount
             // 
@@ -555,6 +561,7 @@
             this.txtGstPercentage.Name = "txtGstPercentage";
             this.txtGstPercentage.Size = new System.Drawing.Size(193, 23);
             this.txtGstPercentage.TabIndex = 91;
+            this.txtGstPercentage.TextChanged += new System.EventHandler(this.txtGstPercentage_TextChanged);
             // 
             // lblGstPercentage
             // 
@@ -574,6 +581,7 @@
             this.txtDiscountPercentage.Name = "txtDiscountPercentage";
             this.txtDiscountPercentage.Size = new System.Drawing.Size(193, 23);
             this.txtDiscountPercentage.TabIndex = 89;
+            this.txtDiscountPercentage.TextChanged += new System.EventHandler(this.txtDiscountPercentage_TextChanged);
             // 
             // lblDiscountPercentage
             // 
@@ -611,7 +619,7 @@
             this.lblCalculationDetails.AutoSize = true;
             this.lblCalculationDetails.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCalculationDetails.ForeColor = System.Drawing.Color.White;
-            this.lblCalculationDetails.Location = new System.Drawing.Point(3, 13);
+            this.lblCalculationDetails.Location = new System.Drawing.Point(12, 7);
             this.lblCalculationDetails.Name = "lblCalculationDetails";
             this.lblCalculationDetails.Size = new System.Drawing.Size(166, 14);
             this.lblCalculationDetails.TabIndex = 5;
@@ -622,7 +630,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ClientSize = new System.Drawing.Size(997, 535);
+            this.ClientSize = new System.Drawing.Size(997, 527);
             this.Controls.Add(this.pnlCalculationDetails);
             this.Controls.Add(this.pnlAddedProducts);
             this.Controls.Add(this.pnlProductDetails);
@@ -634,6 +642,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Purchase And Sales";
+            this.Load += new System.EventHandler(this.frmPurchaseAndSales_Load);
             this.pnlPurchaseAndSalesTop.ResumeLayout(false);
             this.pnlPurchaseAndSalesTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
@@ -681,7 +690,7 @@
         private System.Windows.Forms.Label lblInventory;
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.Label lblQuantity;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtRate;
         private System.Windows.Forms.Label lblRate;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label lblAddedProducts;
@@ -700,5 +709,6 @@
         private System.Windows.Forms.Label lblSubTotal;
         private System.Windows.Forms.Label lblCalculationDetails;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.ToolTip toolTipPurchaseAndSales;
     }
 }

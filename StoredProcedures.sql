@@ -235,6 +235,17 @@ BEGIN
 	SELECT * FROM tbl_products WHERE CAST(id as varchar) LIKE '%' + ISNULL(@keyword,0) + '%' OR name LIKE '%'+ @keyword +'%' OR category LIKE '%'+ @keyword +'%' OR description LIKE '%'+ @keyword +'%';
 END
 
+------------Search Products for transaction based on keyword---------------
+
+CREATE PROCEDURE USP_SearchProductsForTransaction
+(
+	@keyword varchar(100)
+)
+AS
+BEGIN
+	SELECT name,rate,qty FROM tbl_products WHERE CAST(id as varchar) LIKE '%' + ISNULL(@keyword,0) + '%' OR name LIKE '%'+ @keyword +'%';
+END
+
 ----------------------------------------------------------------
 
 -----DEALER AND CUSTOMER
@@ -302,4 +313,80 @@ BEGIN
 	SELECT * FROM tbl_dealer_customer WHERE CAST(id as varchar) LIKE '%' + ISNULL(@keyword,0) + '%' OR name LIKE '%'+ @keyword +'%' OR type LIKE '%'+ @keyword +'%' OR email LIKE '%'+ @keyword +'%' OR contact LIKE '%' + @keyword + '%' OR address LIKE '%'+ @keyword +'%';
 END
 
+---Search dealers and customers for transaction based on keyword---
+
+CREATE PROCEDURE USP_SearchDealersAndCustomersForTransaction
+(
+	@keyword varchar(100)
+)
+AS
+BEGIN
+	SELECT name,email,contact,address FROM tbl_dealer_customer WHERE CAST(id as varchar) LIKE '%' + ISNULL(@keyword,0) + '%' OR name LIKE '%'+ @keyword +'%' OR contact LIKE '%' + @keyword + '%';
+END
+
 ------------------------------------------------------------------
+
+---- Purchase And Sale
+--after insert
+set @TRANID = SCOPE_IDENTITY();
+
+--end
+select @TRANID
+
+---------------------Insert transaction-------------------
+CREATE PROCEDURE USP_InsertTransaction
+(
+	@id int,
+	@type varchar(50),
+	@dealer_customer_id int,
+	@grandTotal numeric(18,2),
+	@transaction_date datetime,
+	@tax numeric(18,2),
+	@discount numeric(18,2),
+	@added_by int
+)
+AS
+BEGIN
+	DECLARE @COUNT AS Int;
+	SET @COUNT = (SELECT COUNT(*) from tbl_transactions WHERE id=@id);
+	IF(@COUNT > 0)
+		BEGIN
+			UPDATE tbl_transactions SET type=@type,dealer_customer_id=@dealer_customer_id,grandTotal=@grandTotal,transaction_date=@transaction_date,tax=@tax,discount=@discount,added_by=@added_by WHERE id=@id;
+		END
+	ELSE
+		BEGIN
+			INSERT INTO tbl_transactions(type,dealer_customer_id,grandTotal,transaction_date,tax,discount,added_by) VALUES(@type,@dealer_customer_id,@grandTotal,@transaction_date,@tax,@discount,@added_by);
+			set @TRANID = SCOPE_IDENTITY(); 
+		END
+	select @TRANID;
+END
+
+
+-------------------Insert transaction details----------------
+
+CREATE PROCEDURE USP_InsertTransactionDetail
+(
+	@id int,
+	@product_id int,
+	@rate numeric(18,2),
+	@qty numeric(18,2),
+	@total numeric(18,2),
+	@dealer_customer_id int,
+	@added_date datetime,
+	@added_by int
+)
+AS
+BEGIN
+	DECLARE @COUNT AS Int;
+	SET @COUNT = (SELECT COUNT(*) from tbl_transactions WHERE id=@id);
+	IF(@COUNT > 0)
+		BEGIN
+			UPDATE tbl_transactions SET product_id=@product_id,rate=@rate,qty=@qty,total=@total,dealer_customer_id=@dealer_customer_id,added_date=@added_date,added_by=@added_by WHERE id=@id;
+		END
+	ELSE
+		BEGIN
+			INSERT INTO tbl_transactions(product_id,rate,qty,total,dealer_customer_id,added_date,added_by) VALUES(@product_id,@rate,@qty,@total,@dealer_customer_id,@added_date,@added_by);
+			set @TRANID = SCOPE_IDENTITY(); 
+		END
+	select @TRANID;
+END

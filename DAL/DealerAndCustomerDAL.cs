@@ -133,5 +133,35 @@ namespace EasyBilling.DAL
             return maxDealerAndCustomerId;
         }
         #endregion
+        #region search dealers and customers for transation based on keyword
+        public DealerAndCustomerBLL SearchDealerAndCustomerForTransaction(string keyword)
+        {
+            DataTable dt = new DataTable();
+            DealerAndCustomerBLL dc = new DealerAndCustomerBLL();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("USP_SearchDealersAndCustomersForTransaction", AppManager.ConnectionManager);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("keyword", SqlDbType.VarChar).Value = keyword;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                adapter.Dispose();
+                dt = ds.Tables[0];
+                if(dt.Rows.Count > 0)
+                {
+                    dc.name = Common.ConvertToString(dt.Rows[0]["name"]);
+                    dc.email = Common.ConvertToString(dt.Rows[0]["email"]);
+                    dc.contact = Common.ConvertToString(dt.Rows[0]["contact"]);
+                    dc.address = Common.ConvertToString(dt.Rows[0]["address"]);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return dc;
+        }
+        #endregion
     }
 }

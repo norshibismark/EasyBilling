@@ -133,5 +133,34 @@ namespace EasyBilling.DAL
             return maxProductId;
         }
         #endregion
+        #region search products for transation based on keyword
+        public ProductsBLL SearchDealerAndCustomerForTransaction(string keyword)
+        {
+            DataTable dt = new DataTable();
+            ProductsBLL p = new ProductsBLL();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("USP_SearchProductsForTransaction", AppManager.ConnectionManager);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("keyword", SqlDbType.VarChar).Value = keyword;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                adapter.Dispose();
+                dt = ds.Tables[0];
+                if (dt.Rows.Count > 0)
+                {
+                    p.name = Common.ConvertToString(dt.Rows[0]["name"]);
+                    p.rate = Common.ConvertToDouble(dt.Rows[0]["rate"]);
+                    p.qty = Common.ConvertToDouble(dt.Rows[0]["qty"]);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return p;
+        }
+        #endregion
     }
 }
