@@ -37,7 +37,7 @@ namespace EasyBilling.UI
                 l.user_type = Common.ConvertToString(cmbUserType.Text.Trim());
                 if (dal.LoginCheck(l))
                 {
-                    MessageBox.Show("Logged in successfully.");
+                    MessageBox.Show("Logged in successfully");
                     loggedInUser = l.username;
                     //Open respective form based on user type
                     switch (l.user_type)
@@ -57,13 +57,13 @@ namespace EasyBilling.UI
                             }
                             break;
                         default:
-                            MessageBox.Show("User Type does not exists.");
+                            MessageBox.Show("User Type does not exists");
                             break;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Login failed please try again.");
+                    MessageBox.Show("Login failed please try again");
                 }
             }
         }

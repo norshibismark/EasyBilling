@@ -12,16 +12,16 @@ namespace EasyBilling.DAL
 {
     class TransactionDAL
     {
-        #region insert transaction 
-        public bool insertTransaction(TransactionsBLL t,out int transactionId)
+        #region insert transactions 
+        public bool insertTransactions(TransactionsBLL t,out int transactionId)
         {
             bool isSuccess = false;
             transactionId = -1;
             try
             {
-                SqlCommand cmd = new SqlCommand("USP_InsertTransaction", AppManager.ConnectionManager);
+                SqlCommand cmd = new SqlCommand("USP_InsertTransactions", AppManager.ConnectionManager);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("id", SqlDbType.Int).Value = t.id;
+                //cmd.Parameters.Add("id", SqlDbType.Int).Value = t.id;
                 cmd.Parameters.Add("type", SqlDbType.VarChar).Value = t.type;
                 cmd.Parameters.Add("dealer_customer_id", SqlDbType.Int).Value = t.dealer_customer_id;
                 cmd.Parameters.Add("grandTotal", SqlDbType.Decimal).Value = t.grandTotal;

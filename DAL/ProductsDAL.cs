@@ -162,5 +162,30 @@ namespace EasyBilling.DAL
             return p;
         }
         #endregion
+        #region get product Id from name
+        public ProductsBLL getProductIdFromName(string name)
+        {
+            ProductsBLL p = new ProductsBLL();
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("USP_GetProductIdFromName", AppManager.ConnectionManager);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("productName", SqlDbType.VarChar).Value = name;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dt);
+                adapter.Dispose();
+                if (dt.Rows.Count > 0)
+                {
+                    p.id = Common.ConvertToInt(dt.Rows[0]["id"].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return p;
+        }
+        #endregion
     }
 }

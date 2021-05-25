@@ -13,14 +13,14 @@ namespace EasyBilling.DAL
     class TrasactionDetailDAL
     {
         #region insert transaction detail
-        public bool insertTransaction(TransactionDetailBLL t)
+        public bool insertTransactionDetail(TransactionDetailBLL t)
         {
             bool isSuccess = false;
             try
             {
                 SqlCommand cmd = new SqlCommand("USP_InsertTransactionDetail", AppManager.ConnectionManager);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("id", SqlDbType.Int).Value = t.id;
+                //cmd.Parameters.Add("id", SqlDbType.Int).Value = t.id;
                 cmd.Parameters.Add("product_id", SqlDbType.Int).Value = t.product_id;
                 cmd.Parameters.Add("rate", SqlDbType.Decimal).Value = t.rate;
                 cmd.Parameters.Add("qty", SqlDbType.Decimal).Value = t.qty;
@@ -28,6 +28,7 @@ namespace EasyBilling.DAL
                 cmd.Parameters.Add("dealer_customer_id", SqlDbType.Int).Value = t.dealer_customer_id;
                 cmd.Parameters.Add("added_date", SqlDbType.DateTime).Value = t.added_date;
                 cmd.Parameters.Add("added_by", SqlDbType.Int).Value = t.added_by;
+                cmd.Parameters.Add("tranId", SqlDbType.Int).Value = t.tranId;
                 int rows = cmd.ExecuteNonQuery();
                 if (rows > 0)
                 {

@@ -15,5 +15,6 @@ namespace EasyBilling.BLL
         public int dealer_customer_id { get; set; }
         public DateTime added_date { get; set; }
         public int added_by { get; set; }
+        public int tranId { get; set; }
     }
 }

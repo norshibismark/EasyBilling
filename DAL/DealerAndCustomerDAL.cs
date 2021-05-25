@@ -163,5 +163,30 @@ namespace EasyBilling.DAL
             return dc;
         }
         #endregion
+        #region get dealer or customer Id from name
+        public DealerAndCustomerBLL getDealerOrCustomerIdFromName(string name)
+        {
+            DealerAndCustomerBLL dc = new DealerAndCustomerBLL();
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("USP_GetDealerOrCustomerIdFromName", AppManager.ConnectionManager);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("dealerOrCustomerName", SqlDbType.VarChar).Value = name;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dt);
+                adapter.Dispose();
+                if (dt.Rows.Count > 0)
+                {
+                    dc.id = Common.ConvertToInt(dt.Rows[0]["id"].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return dc;
+        }
+        #endregion
     }
 }

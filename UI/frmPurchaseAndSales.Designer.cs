@@ -30,12 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPurchaseAndSales));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlPurchaseAndSalesTop = new System.Windows.Forms.Panel();
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.lblPurchaseAndSalesTop = new System.Windows.Forms.Label();
             this.pnlDealerAndCustomer = new System.Windows.Forms.Panel();
+            this.btnClearDealerAndCustomerDetails = new System.Windows.Forms.Button();
             this.dtpBillDate = new System.Windows.Forms.DateTimePicker();
             this.lblBillDate = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
@@ -50,6 +51,7 @@
             this.txtDealerAndCustomerSearch = new System.Windows.Forms.TextBox();
             this.lblDealerAndCustomerDetails = new System.Windows.Forms.Label();
             this.pnlProductDetails = new System.Windows.Forms.Panel();
+            this.btnClearProductDetails = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.lblQuantity = new System.Windows.Forms.Label();
@@ -125,6 +127,7 @@
             // 
             // pnlDealerAndCustomer
             // 
+            this.pnlDealerAndCustomer.Controls.Add(this.btnClearDealerAndCustomerDetails);
             this.pnlDealerAndCustomer.Controls.Add(this.dtpBillDate);
             this.pnlDealerAndCustomer.Controls.Add(this.lblBillDate);
             this.pnlDealerAndCustomer.Controls.Add(this.txtAddress);
@@ -143,11 +146,25 @@
             this.pnlDealerAndCustomer.Size = new System.Drawing.Size(973, 92);
             this.pnlDealerAndCustomer.TabIndex = 63;
             // 
+            // btnClearDealerAndCustomerDetails
+            // 
+            this.btnClearDealerAndCustomerDetails.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnClearDealerAndCustomerDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClearDealerAndCustomerDetails.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearDealerAndCustomerDetails.ForeColor = System.Drawing.Color.White;
+            this.btnClearDealerAndCustomerDetails.Location = new System.Drawing.Point(805, 60);
+            this.btnClearDealerAndCustomerDetails.Name = "btnClearDealerAndCustomerDetails";
+            this.btnClearDealerAndCustomerDetails.Size = new System.Drawing.Size(78, 29);
+            this.btnClearDealerAndCustomerDetails.TabIndex = 91;
+            this.btnClearDealerAndCustomerDetails.Text = "CLEAR";
+            this.btnClearDealerAndCustomerDetails.UseVisualStyleBackColor = false;
+            this.btnClearDealerAndCustomerDetails.Click += new System.EventHandler(this.btnClearDealerAndCustomerDetails_Click);
+            // 
             // dtpBillDate
             // 
             this.dtpBillDate.CalendarFont = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpBillDate.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBillDate.Location = new System.Drawing.Point(815, 36);
+            this.dtpBillDate.Location = new System.Drawing.Point(805, 36);
             this.dtpBillDate.Name = "dtpBillDate";
             this.dtpBillDate.Size = new System.Drawing.Size(150, 22);
             this.dtpBillDate.TabIndex = 87;
@@ -156,7 +173,7 @@
             // 
             this.lblBillDate.AutoSize = true;
             this.lblBillDate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBillDate.Location = new System.Drawing.Point(812, 15);
+            this.lblBillDate.Location = new System.Drawing.Point(805, 15);
             this.lblBillDate.Name = "lblBillDate";
             this.lblBillDate.Size = new System.Drawing.Size(61, 16);
             this.lblBillDate.TabIndex = 86;
@@ -272,6 +289,7 @@
             // 
             // pnlProductDetails
             // 
+            this.pnlProductDetails.Controls.Add(this.btnClearProductDetails);
             this.pnlProductDetails.Controls.Add(this.btnAdd);
             this.pnlProductDetails.Controls.Add(this.txtQuantity);
             this.pnlProductDetails.Controls.Add(this.lblQuantity);
@@ -289,15 +307,29 @@
             this.pnlProductDetails.Size = new System.Drawing.Size(973, 89);
             this.pnlProductDetails.TabIndex = 64;
             // 
+            // btnClearProductDetails
+            // 
+            this.btnClearProductDetails.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnClearProductDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClearProductDetails.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearProductDetails.ForeColor = System.Drawing.Color.White;
+            this.btnClearProductDetails.Location = new System.Drawing.Point(805, 51);
+            this.btnClearProductDetails.Name = "btnClearProductDetails";
+            this.btnClearProductDetails.Size = new System.Drawing.Size(78, 32);
+            this.btnClearProductDetails.TabIndex = 90;
+            this.btnClearProductDetails.Text = "CLEAR";
+            this.btnClearProductDetails.UseVisualStyleBackColor = false;
+            this.btnClearProductDetails.Click += new System.EventHandler(this.btnClearProductDetails_Click);
+            // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.SeaGreen;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(815, 27);
+            this.btnAdd.Location = new System.Drawing.Point(805, 15);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(84, 37);
+            this.btnAdd.Size = new System.Drawing.Size(78, 30);
             this.btnAdd.TabIndex = 89;
             this.btnAdd.Text = "&ADD";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -422,23 +454,23 @@
             // grdAddedProducts
             // 
             this.grdAddedProducts.AllowUserToAddRows = false;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdAddedProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdAddedProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grdAddedProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdAddedProducts.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdAddedProducts.DefaultCellStyle = dataGridViewCellStyle2;
             this.grdAddedProducts.Location = new System.Drawing.Point(12, 30);
             this.grdAddedProducts.Name = "grdAddedProducts";
             this.grdAddedProducts.Size = new System.Drawing.Size(455, 228);
@@ -489,6 +521,7 @@
             this.btnSave.TabIndex = 99;
             this.btnSave.Text = "&SAVE";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtReturnAmount
             // 
@@ -619,7 +652,7 @@
             this.lblCalculationDetails.AutoSize = true;
             this.lblCalculationDetails.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCalculationDetails.ForeColor = System.Drawing.Color.White;
-            this.lblCalculationDetails.Location = new System.Drawing.Point(12, 7);
+            this.lblCalculationDetails.Location = new System.Drawing.Point(12, 11);
             this.lblCalculationDetails.Name = "lblCalculationDetails";
             this.lblCalculationDetails.Size = new System.Drawing.Size(166, 14);
             this.lblCalculationDetails.TabIndex = 5;
@@ -710,5 +743,7 @@
         private System.Windows.Forms.Label lblCalculationDetails;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.ToolTip toolTipPurchaseAndSales;
+        private System.Windows.Forms.Button btnClearDealerAndCustomerDetails;
+        private System.Windows.Forms.Button btnClearProductDetails;
     }
 }
