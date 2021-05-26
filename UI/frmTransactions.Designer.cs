@@ -51,13 +51,14 @@
             this.pnlPurchaseAndSalesTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlPurchaseAndSalesTop.Location = new System.Drawing.Point(0, 0);
             this.pnlPurchaseAndSalesTop.Name = "pnlPurchaseAndSalesTop";
-            this.pnlPurchaseAndSalesTop.Size = new System.Drawing.Size(821, 36);
+            this.pnlPurchaseAndSalesTop.Size = new System.Drawing.Size(770, 36);
             this.pnlPurchaseAndSalesTop.TabIndex = 63;
+            this.pnlPurchaseAndSalesTop.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPurchaseAndSalesTop_Paint);
             // 
             // pictureBoxClose
             // 
             this.pictureBoxClose.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxClose.Image")));
-            this.pictureBoxClose.Location = new System.Drawing.Point(785, 3);
+            this.pictureBoxClose.Location = new System.Drawing.Point(734, 3);
             this.pictureBoxClose.Name = "pictureBoxClose";
             this.pictureBoxClose.Size = new System.Drawing.Size(33, 30);
             this.pictureBoxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -70,11 +71,12 @@
             this.lblTransactionsTop.AutoSize = true;
             this.lblTransactionsTop.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTransactionsTop.ForeColor = System.Drawing.Color.White;
-            this.lblTransactionsTop.Location = new System.Drawing.Point(341, 9);
+            this.lblTransactionsTop.Location = new System.Drawing.Point(298, 9);
             this.lblTransactionsTop.Name = "lblTransactionsTop";
             this.lblTransactionsTop.Size = new System.Drawing.Size(136, 18);
             this.lblTransactionsTop.TabIndex = 1;
             this.lblTransactionsTop.Text = "TRANSACTIONS";
+            this.lblTransactionsTop.Click += new System.EventHandler(this.lblTransactionsTop_Click);
             // 
             // lblTransactionType
             // 
@@ -85,6 +87,7 @@
             this.lblTransactionType.Size = new System.Drawing.Size(122, 16);
             this.lblTransactionType.TabIndex = 80;
             this.lblTransactionType.Text = "Transaction Type";
+            this.lblTransactionType.Click += new System.EventHandler(this.lblTransactionType_Click);
             // 
             // cmbTranasactionType
             // 
@@ -135,15 +138,16 @@
             this.grdTransactionDetails.DefaultCellStyle = dataGridViewCellStyle2;
             this.grdTransactionDetails.Location = new System.Drawing.Point(12, 76);
             this.grdTransactionDetails.Name = "grdTransactionDetails";
-            this.grdTransactionDetails.Size = new System.Drawing.Size(797, 341);
+            this.grdTransactionDetails.Size = new System.Drawing.Size(748, 406);
             this.grdTransactionDetails.TabIndex = 78;
+            this.grdTransactionDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdTransactionDetails_CellContentClick);
             // 
             // frmTransactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ClientSize = new System.Drawing.Size(821, 427);
+            this.ClientSize = new System.Drawing.Size(770, 494);
             this.Controls.Add(this.lblTransactionType);
             this.Controls.Add(this.cmbTranasactionType);
             this.Controls.Add(this.btnShowAll);

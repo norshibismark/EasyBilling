@@ -271,5 +271,27 @@ namespace EasyBilling.DAL
             return isSuccess;
         }
         #endregion
+        #region display products based on category
+        public DataTable DisplayProductsBasedOnCategory(string category)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("USP_GetProductDetailsBasedOncategory", AppManager.ConnectionManager);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("category", SqlDbType.VarChar).Value = category;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                adapter.Dispose();
+                dt = ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return dt;
+        }
+        #endregion
     }
 }

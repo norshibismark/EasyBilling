@@ -24,13 +24,12 @@ namespace EasyBilling.UI
             if(type == "ALL")
             {
                 dt = tDAL.DisplayAllTransactions();
-                grdTransactionDetails.DataSource = dt;
             }
             else if(type == "PURCHASE" || type == "SALES")
             {
                 dt = tDAL.DisplayAllTransactionsBasedOnType(type);
-                grdTransactionDetails.DataSource = dt;
             }
+            grdTransactionDetails.DataSource = dt;
         }
 
         private void btnShowAll_Click(object sender, EventArgs e)
@@ -47,6 +46,26 @@ namespace EasyBilling.UI
         private void pictureBoxClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void pnlPurchaseAndSalesTop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblTransactionsTop_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTransactionType_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grdTransactionDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -87,6 +87,12 @@
     <Compile Include="UI\frmDealerAndCustomer.Designer.cs">
       <DependentUpon>frmDealerAndCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\frmInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmInventory.Designer.cs">
+      <DependentUpon>frmInventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmDealerAndCustomer.resx">
       <DependentUpon>frmDealerAndCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmInventory.resx">
+      <DependentUpon>frmInventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
