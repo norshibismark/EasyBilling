@@ -71,6 +71,7 @@ namespace EasyBilling.UI
             {
                 txtProductDetailsSearch.Text = "";
                 txtProductDetailsName.Text = "";
+                txtInventory.Text = "";
                 txtRate.Text = "";
                 txtQuantity.Text = "";
                 return;
@@ -83,7 +84,7 @@ namespace EasyBilling.UI
 
                 txtProductDetailsName.Text = Common.ConvertToString(p.name);
                 txtRate.Text = Common.ConvertToString(p.rate);
-                txtQuantity.Text = Common.ConvertToString(p.qty);
+                txtInventory.Text = Common.ConvertToString(p.qty);
             }
         }
 
@@ -267,6 +268,7 @@ namespace EasyBilling.UI
             using(TransactionScope scope = new TransactionScope())
             {
                 int transactionId = -1;
+                string transactionType = lblPurchaseAndSalesTop.Text;
                 bool x = tDAL.insertTransactions(transaction, out transactionId);
 
                 for (int i = 0; i < grdAddedProducts.Rows.Count; i++)
@@ -284,14 +286,37 @@ namespace EasyBilling.UI
                     transactionDetails.added_date = dtpBillDate.Value;
                     transactionDetails.added_by = usr.id;
                     transactionDetails.tranId = transactionId;
+
+                    //increase or decrease the product quantity based on purchase and sales
+                    
+                    bool isPSIncreaseDecrease = false;
+                    if(transactionType == "PURCHASE")
+                    {
+                        //increase the product quantity
+                        isPSIncreaseDecrease = pDAL.increaseProductQuantity(transactionDetails.product_id, transactionDetails.qty);
+                    }
+                    else if(transactionType == "SALES")
+                    {
+                        //decrease the product quantity
+                        isPSIncreaseDecrease = pDAL.decreaseProductQuantity(transactionDetails.product_id, transactionDetails.qty);
+                    }
+
                     bool y = tdDAL.insertTransactionDetail(transactionDetails);
-                    isSuccess = x && y;
-                }
+                    isSuccess = x && y && isPSIncreaseDecrease;
+                } 
                 
                 if(isSuccess)
                 {
                     scope.Complete();
-                    MessageBox.Show("Transaction completed successfully");
+                    if (transactionType == "PURCHASE")
+                    {
+                        MessageBox.Show("Purchase successfull");
+                    }
+                    else if (transactionType == "SALES")
+                    {
+                        MessageBox.Show("Sales successfull");
+                    }
+                    dtTransaction.Clear();
                     grdAddedProducts.DataSource = null;
                     clearDealerAndCustomerDetails();
                     clearProductDetails();

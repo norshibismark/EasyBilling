@@ -256,6 +256,29 @@ AS
 BEGIN
 	SELECT id FROM tbl_products WHERE name=@productName;
 END
+
+-----get the current quantity based on product id--------------
+
+CREATE PROCEDURE USP_GetCurrentQuantityOfProducts
+(
+	@id int
+)
+AS
+BEGIN
+	SELECT qty FROM tbl_products WHERE id=@id;
+END
+
+-----Update quantity based on product id--------------
+
+CREATE PROCEDURE USP_UpdateQuantityOfProducts
+(
+	@id int,
+	@quantity numeric(18,2)
+)
+AS
+BEGIN
+	UPDATE tbl_products SET qty=@quantity WHERE id=@id;
+END
 ----------------------------------------------------------------
 
 -----DEALER AND CUSTOMER

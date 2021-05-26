@@ -141,7 +141,7 @@
             this.pnlDealerAndCustomer.Controls.Add(this.lblDealerAndCustomerSearch);
             this.pnlDealerAndCustomer.Controls.Add(this.txtDealerAndCustomerSearch);
             this.pnlDealerAndCustomer.Controls.Add(this.lblDealerAndCustomerDetails);
-            this.pnlDealerAndCustomer.Location = new System.Drawing.Point(12, 49);
+            this.pnlDealerAndCustomer.Location = new System.Drawing.Point(12, 40);
             this.pnlDealerAndCustomer.Name = "pnlDealerAndCustomer";
             this.pnlDealerAndCustomer.Size = new System.Drawing.Size(973, 92);
             this.pnlDealerAndCustomer.TabIndex = 63;
@@ -152,7 +152,7 @@
             this.btnClearDealerAndCustomerDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClearDealerAndCustomerDetails.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClearDealerAndCustomerDetails.ForeColor = System.Drawing.Color.White;
-            this.btnClearDealerAndCustomerDetails.Location = new System.Drawing.Point(805, 60);
+            this.btnClearDealerAndCustomerDetails.Location = new System.Drawing.Point(805, 53);
             this.btnClearDealerAndCustomerDetails.Name = "btnClearDealerAndCustomerDetails";
             this.btnClearDealerAndCustomerDetails.Size = new System.Drawing.Size(78, 29);
             this.btnClearDealerAndCustomerDetails.TabIndex = 91;
@@ -164,7 +164,7 @@
             // 
             this.dtpBillDate.CalendarFont = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpBillDate.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBillDate.Location = new System.Drawing.Point(805, 36);
+            this.dtpBillDate.Location = new System.Drawing.Point(805, 29);
             this.dtpBillDate.Name = "dtpBillDate";
             this.dtpBillDate.Size = new System.Drawing.Size(150, 22);
             this.dtpBillDate.TabIndex = 87;
@@ -173,7 +173,7 @@
             // 
             this.lblBillDate.AutoSize = true;
             this.lblBillDate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBillDate.Location = new System.Drawing.Point(805, 15);
+            this.lblBillDate.Location = new System.Drawing.Point(805, 8);
             this.lblBillDate.Name = "lblBillDate";
             this.lblBillDate.Size = new System.Drawing.Size(61, 16);
             this.lblBillDate.TabIndex = 86;
@@ -281,7 +281,7 @@
             this.lblDealerAndCustomerDetails.AutoSize = true;
             this.lblDealerAndCustomerDetails.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDealerAndCustomerDetails.ForeColor = System.Drawing.Color.White;
-            this.lblDealerAndCustomerDetails.Location = new System.Drawing.Point(9, 5);
+            this.lblDealerAndCustomerDetails.Location = new System.Drawing.Point(9, 4);
             this.lblDealerAndCustomerDetails.Name = "lblDealerAndCustomerDetails";
             this.lblDealerAndCustomerDetails.Size = new System.Drawing.Size(233, 14);
             this.lblDealerAndCustomerDetails.TabIndex = 2;
@@ -302,7 +302,7 @@
             this.pnlProductDetails.Controls.Add(this.lblProductDetailsSearch);
             this.pnlProductDetails.Controls.Add(this.txtProductDetailsSearch);
             this.pnlProductDetails.Controls.Add(this.lblProductDetails);
-            this.pnlProductDetails.Location = new System.Drawing.Point(12, 147);
+            this.pnlProductDetails.Location = new System.Drawing.Point(12, 137);
             this.pnlProductDetails.Name = "pnlProductDetails";
             this.pnlProductDetails.Size = new System.Drawing.Size(973, 89);
             this.pnlProductDetails.TabIndex = 64;
@@ -339,7 +339,7 @@
             // 
             this.txtQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtQuantity.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantity.Location = new System.Drawing.Point(606, 56);
+            this.txtQuantity.Location = new System.Drawing.Point(606, 54);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(193, 23);
             this.txtQuantity.TabIndex = 87;
@@ -348,7 +348,7 @@
             // 
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantity.Location = new System.Drawing.Point(540, 58);
+            this.lblQuantity.Location = new System.Drawing.Point(540, 56);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(65, 16);
             this.lblQuantity.TabIndex = 88;
@@ -358,7 +358,7 @@
             // 
             this.txtRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRate.Location = new System.Drawing.Point(606, 27);
+            this.txtRate.Location = new System.Drawing.Point(606, 25);
             this.txtRate.Name = "txtRate";
             this.txtRate.Size = new System.Drawing.Size(193, 23);
             this.txtRate.TabIndex = 85;
@@ -367,7 +367,7 @@
             // 
             this.lblRate.AutoSize = true;
             this.lblRate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRate.Location = new System.Drawing.Point(540, 29);
+            this.lblRate.Location = new System.Drawing.Point(540, 27);
             this.lblRate.Name = "lblRate";
             this.lblRate.Size = new System.Drawing.Size(38, 16);
             this.lblRate.TabIndex = 86;
@@ -377,7 +377,7 @@
             // 
             this.txtInventory.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtInventory.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInventory.Location = new System.Drawing.Point(335, 57);
+            this.txtInventory.Location = new System.Drawing.Point(335, 55);
             this.txtInventory.Name = "txtInventory";
             this.txtInventory.Size = new System.Drawing.Size(193, 23);
             this.txtInventory.TabIndex = 83;
@@ -386,7 +386,7 @@
             // 
             this.lblInventory.AutoSize = true;
             this.lblInventory.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInventory.Location = new System.Drawing.Point(257, 59);
+            this.lblInventory.Location = new System.Drawing.Point(257, 57);
             this.lblInventory.Name = "lblInventory";
             this.lblInventory.Size = new System.Drawing.Size(72, 16);
             this.lblInventory.TabIndex = 84;
@@ -396,7 +396,7 @@
             // 
             this.txtProductDetailsName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProductDetailsName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductDetailsName.Location = new System.Drawing.Point(335, 27);
+            this.txtProductDetailsName.Location = new System.Drawing.Point(335, 25);
             this.txtProductDetailsName.Name = "txtProductDetailsName";
             this.txtProductDetailsName.Size = new System.Drawing.Size(193, 23);
             this.txtProductDetailsName.TabIndex = 81;
@@ -405,7 +405,7 @@
             // 
             this.lblProductDetailsName.AutoSize = true;
             this.lblProductDetailsName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductDetailsName.Location = new System.Drawing.Point(272, 29);
+            this.lblProductDetailsName.Location = new System.Drawing.Point(272, 27);
             this.lblProductDetailsName.Name = "lblProductDetailsName";
             this.lblProductDetailsName.Size = new System.Drawing.Size(44, 16);
             this.lblProductDetailsName.TabIndex = 82;
@@ -415,7 +415,7 @@
             // 
             this.lblProductDetailsSearch.AutoSize = true;
             this.lblProductDetailsSearch.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductDetailsSearch.Location = new System.Drawing.Point(9, 29);
+            this.lblProductDetailsSearch.Location = new System.Drawing.Point(9, 27);
             this.lblProductDetailsSearch.Name = "lblProductDetailsSearch";
             this.lblProductDetailsSearch.Size = new System.Drawing.Size(54, 16);
             this.lblProductDetailsSearch.TabIndex = 78;
@@ -425,7 +425,7 @@
             // 
             this.txtProductDetailsSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProductDetailsSearch.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductDetailsSearch.Location = new System.Drawing.Point(69, 27);
+            this.txtProductDetailsSearch.Location = new System.Drawing.Point(69, 25);
             this.txtProductDetailsSearch.Name = "txtProductDetailsSearch";
             this.txtProductDetailsSearch.Size = new System.Drawing.Size(193, 23);
             this.txtProductDetailsSearch.TabIndex = 77;
@@ -446,7 +446,7 @@
             // 
             this.pnlAddedProducts.Controls.Add(this.grdAddedProducts);
             this.pnlAddedProducts.Controls.Add(this.lblAddedProducts);
-            this.pnlAddedProducts.Location = new System.Drawing.Point(12, 246);
+            this.pnlAddedProducts.Location = new System.Drawing.Point(12, 232);
             this.pnlAddedProducts.Name = "pnlAddedProducts";
             this.pnlAddedProducts.Size = new System.Drawing.Size(481, 270);
             this.pnlAddedProducts.TabIndex = 65;
@@ -503,7 +503,7 @@
             this.pnlCalculationDetails.Controls.Add(this.txtSubTotal);
             this.pnlCalculationDetails.Controls.Add(this.lblSubTotal);
             this.pnlCalculationDetails.Controls.Add(this.lblCalculationDetails);
-            this.pnlCalculationDetails.Location = new System.Drawing.Point(499, 246);
+            this.pnlCalculationDetails.Location = new System.Drawing.Point(499, 232);
             this.pnlCalculationDetails.Name = "pnlCalculationDetails";
             this.pnlCalculationDetails.Size = new System.Drawing.Size(486, 270);
             this.pnlCalculationDetails.TabIndex = 66;
@@ -663,7 +663,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ClientSize = new System.Drawing.Size(997, 527);
+            this.ClientSize = new System.Drawing.Size(997, 513);
             this.Controls.Add(this.pnlCalculationDetails);
             this.Controls.Add(this.pnlAddedProducts);
             this.Controls.Add(this.pnlProductDetails);

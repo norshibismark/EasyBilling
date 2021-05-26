@@ -187,5 +187,89 @@ namespace EasyBilling.DAL
             return p;
         }
         #endregion
+        #region method to get the current quantity from the database based on product id
+        public double getProductQuantity(int productId)
+        {
+            double quantity = 0;
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("USP_GetCurrentQuantityOfProducts", AppManager.ConnectionManager);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("id", SqlDbType.Int).Value = productId;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dt);
+                adapter.Dispose();
+
+                if(dt.Rows.Count > 0)
+                {
+                    quantity = Common.ConvertToDouble(dt.Rows[0]["qty"].ToString());
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return quantity;
+        }
+        #endregion
+        #region method to update quantity based on product id
+        public bool updateQuantity(int productId,double quantity)
+        {
+            bool isSuccess = false;
+            try
+            {
+                SqlCommand cmd = new SqlCommand("USP_UpdateQuantityOfProducts", AppManager.ConnectionManager);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("id", SqlDbType.Int).Value = productId;
+                cmd.Parameters.Add("quantity", SqlDbType.Decimal).Value = quantity;
+                int rows = cmd.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return isSuccess;
+        }
+        #endregion
+        #region method to increase the product quantity
+        public bool increaseProductQuantity(int productId,double increaseQuantity)
+        {
+            bool isSuccess = false;
+            try
+            {
+                double currentQuantity = getProductQuantity(productId);
+                double newQuantity = currentQuantity + increaseQuantity;
+                isSuccess = updateQuantity(productId, newQuantity);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return isSuccess;
+        }
+        #endregion
+        #region method to decrease the product quantity
+        public bool decreaseProductQuantity(int productId, double decreaseQuantity)
+        {
+            bool isSuccess = false;
+            try
+            {
+                double currentQuantity = getProductQuantity(productId);
+                double newQuantity = currentQuantity - decreaseQuantity;
+                isSuccess = updateQuantity(productId, newQuantity);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return isSuccess;
+        }
+        #endregion
     }
 }
