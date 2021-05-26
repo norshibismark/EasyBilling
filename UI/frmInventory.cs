@@ -57,5 +57,10 @@ namespace EasyBilling.UI
             string category = Common.ConvertToString(cmbCategory.Text.Trim());
             loadInventory(category);
         }
+
+        private void pictureBoxClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
