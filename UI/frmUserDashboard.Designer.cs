@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserDashboard));
             this.pnlFooter = new System.Windows.Forms.Panel();
             this.lblFooter = new System.Windows.Forms.Label();
             this.menuStripTop = new System.Windows.Forms.MenuStrip();
@@ -170,8 +171,8 @@
             this.Controls.Add(this.lblFName);
             this.Controls.Add(this.lblLoggedInUser);
             this.Controls.Add(this.lblUser);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmUserDashboard";
-            this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "User Dashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

@@ -279,6 +279,8 @@ AS
 BEGIN
 	UPDATE tbl_products SET qty=@quantity WHERE id=@id;
 END
+
+
 ----------------------------------------------------------------
 
 -----DEALER AND CUSTOMER
@@ -433,3 +435,22 @@ BEGIN
 	--	END
 	--select @TRANID;
 END
+
+-----------------------------------------------------------------------------
+-------------Getting all transaction details----------------
+CREATE PROCEDURE USP_GetAllTransactionDetails
+AS
+BEGIN
+	SELECT * FROM tbl_transactions
+END
+
+-------------Getting all transaction details based on type----------------
+CREATE PROCEDURE USP_GetAllTransactionDetailsBasedOnType
+(
+@type varchar(50)
+)
+AS
+BEGIN
+	SELECT * FROM tbl_transactions WHERE type=@type;
+END
+---------------------------------------------------------------

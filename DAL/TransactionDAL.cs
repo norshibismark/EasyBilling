@@ -47,5 +47,48 @@ namespace EasyBilling.DAL
             return isSuccess;
         }
         #endregion
+        #region display all tranasactions
+        public DataTable DisplayAllTransactions()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("USP_GetAllTransactionDetails", AppManager.ConnectionManager);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                adapter.Dispose();
+                dt = ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return dt;
+        }
+        #endregion
+        #region display all tranasactions based on type
+        public DataTable DisplayAllTransactionsBasedOnType(string type)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("USP_GetAllTransactionDetailsBasedOnType", AppManager.ConnectionManager);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("type", SqlDbType.VarChar).Value = type;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                adapter.Dispose();
+                dt = ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return dt;
+        }
+        #endregion
     }
 }
