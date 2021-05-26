@@ -59,6 +59,7 @@
     <Compile Include="Common.cs" />
     <Compile Include="DAL\CategoriesDAL.cs" />
     <Compile Include="DAL\DealerAndCustomerDAL.cs" />
+    <Compile Include="DAL\DGVPrinter.cs" />
     <Compile Include="DAL\LoginDAL.cs" />
     <Compile Include="DAL\ProductsDAL.cs" />
     <Compile Include="DAL\TransactionDAL.cs" />

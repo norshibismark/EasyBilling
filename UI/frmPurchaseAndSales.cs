@@ -1,4 +1,5 @@
-﻿using EasyBilling.BLL;
+﻿using DGVPrinterHelper;
+using EasyBilling.BLL;
 using EasyBilling.DAL;
 using System;
 using System.Collections.Generic;
@@ -179,6 +180,10 @@ namespace EasyBilling.UI
 
         private void txtDiscountPercentage_TextChanged(object sender, EventArgs e)
         {
+            if(!txtDiscountPercentage.Focused == true)
+            {
+                return;
+            }
             if(String.IsNullOrEmpty(txtDiscountPercentage.Text.Trim()))
             {
                 MessageBox.Show("Enter discount percentage first");
@@ -195,6 +200,10 @@ namespace EasyBilling.UI
 
         private void txtGstPercentage_TextChanged(object sender, EventArgs e)
         {
+            if (!txtGstPercentage.Focused == true)
+            {
+                return;
+            }
             if (String.IsNullOrEmpty(txtGstPercentage.Text.Trim()) || txtGstPercentage.Text.Trim() == "0")
             {
                 txtGrandTotal.Text = Common.ConvertToString(_grandTotal);
@@ -308,6 +317,7 @@ namespace EasyBilling.UI
                 if(isSuccess)
                 {
                     scope.Complete();
+                    printTransactionFromGrid(grdAddedProducts);
                     if (transactionType == "PURCHASE")
                     {
                         MessageBox.Show("Purchase successfull");
@@ -326,6 +336,28 @@ namespace EasyBilling.UI
                 {
                     MessageBox.Show("Transaction failed");
                 }
+            }
+        }
+
+        private void printTransactionFromGrid(DataGridView gridName)
+        {
+            try
+            {
+                DGVPrinter printer = new DGVPrinter();
+                printer.Title = "\r\n\r\n\r\n EASY BILLING";
+                printer.SubTitle = "\rSirsi,Uttara Kannada\r\n Phone:7829XXXXXX";
+                printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+                printer.PageNumbers = true;
+                printer.PageNumberInHeader = true;
+                printer.PorportionalColumns = true;
+                printer.HeaderCellAlignment = StringAlignment.Near;
+                printer.Footer = "\rDiscount: " + txtDiscountPercentage.Text + "% \r \n" + " GST: " + txtGstPercentage.Text + "% \r \n" + "Grand Total: " + txtGrandTotal.Text + "\r\n" + "Thank you for doing business with us";
+                printer.FooterSpacing = 15;
+                printer.PrintDataGridView(gridName);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

@@ -76,6 +76,7 @@ namespace EasyBilling.UI
         private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
             AppManager.ConnectionManager.Close();
+            Application.Exit();
         }
         private bool isValidated()
         {
