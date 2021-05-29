@@ -36,58 +36,56 @@ namespace EasyBilling.UI
         {
             string type = frmUserDashboard.transactionType;
             lblPurchaseAndSalesTop.Text = type;
-            toolTipPurchaseAndSales.SetToolTip(txtDealerAndCustomerSearch, "Press enter key to search dealers and customers");
-            toolTipPurchaseAndSales.SetToolTip(txtProductDetailsSearch, "Press enter key to search products");
             loadProductDetailsColumnInGrid();
         }
 
-        private void txtDealerAndCustomerSearch_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            string keyWord = Common.ConvertToString(txtDealerAndCustomerSearch.Text.Trim());
-            if (keyWord == "" || keyWord == null)
-            {
-                txtDealerAndCustomerName.Text = "";
-                txtEmail.Text = "";
-                txtContact.Text = "";
-                txtAddress.Text = "";
-                return;
-            }
+        //private void txtDealerAndCustomerSearch_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    string keyWord = Common.ConvertToString(txtDealerAndCustomerSearch.Text.Trim());
+        //    if (keyWord == "" || keyWord == null)
+        //    {
+        //        txtDealerAndCustomerName.Text = "";
+        //        txtEmail.Text = "";
+        //        txtContact.Text = "";
+        //        txtAddress.Text = "";
+        //        return;
+        //    }
 
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                DealerAndCustomerBLL dc = new DealerAndCustomerBLL();
-                dc = dcDAL.SearchDealerAndCustomerForTransaction(keyWord);
+        //    if (e.KeyChar == (char)Keys.Enter)
+        //    {
+        //        DealerAndCustomerBLL dc = new DealerAndCustomerBLL();
+        //        dc = dcDAL.SearchDealerAndCustomerForTransaction(keyWord);
 
-                txtDealerAndCustomerName.Text = dc.name;
-                txtEmail.Text = dc.email;
-                txtContact.Text = dc.contact;
-                txtAddress.Text = dc.address;
-            }
-        }
+        //        txtDealerAndCustomerName.Text = dc.name;
+        //        txtEmail.Text = dc.email;
+        //        txtContact.Text = dc.contact;
+        //        txtAddress.Text = dc.address;
+        //    }
+        //}
 
-        private void txtProductDetailsSearch_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            string keyWord = Common.ConvertToString(txtProductDetailsSearch.Text.Trim());
-            if (keyWord == "" || keyWord == null)
-            {
-                txtProductDetailsSearch.Text = "";
-                txtProductDetailsName.Text = "";
-                txtInventory.Text = "";
-                txtRate.Text = "";
-                txtQuantity.Text = "";
-                return;
-            }
+        //private void txtProductDetailsSearch_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    string keyWord = Common.ConvertToString(txtProductDetailsSearch.Text.Trim());
+        //    if (keyWord == "" || keyWord == null)
+        //    {
+        //        txtProductDetailsSearch.Text = "";
+        //        txtProductDetailsName.Text = "";
+        //        txtInventory.Text = "";
+        //        txtRate.Text = "";
+        //        txtQuantity.Text = "";
+        //        return;
+        //    }
 
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                ProductsBLL p = new ProductsBLL();
-                p = pDAL.SearchDealerAndCustomerForTransaction(keyWord);
+        //    if (e.KeyChar == (char)Keys.Enter)
+        //    {
+        //        ProductsBLL p = new ProductsBLL();
+        //        p = pDAL.SearchDealerAndCustomerForTransaction(keyWord);
 
-                txtProductDetailsName.Text = Common.ConvertToString(p.name);
-                txtRate.Text = Common.ConvertToString(p.rate);
-                txtInventory.Text = Common.ConvertToString(p.qty);
-            }
-        }
+        //        txtProductDetailsName.Text = Common.ConvertToString(p.name);
+        //        txtRate.Text = Common.ConvertToString(p.rate);
+        //        txtInventory.Text = Common.ConvertToString(p.qty);
+        //    }
+        //}
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -142,7 +140,6 @@ namespace EasyBilling.UI
 
         private void clearProductDetails()
         {
-            txtProductDetailsSearch.Text = "";
             txtProductDetailsName.Text = "";
             txtInventory.Text = "";
             txtRate.Text = "";
@@ -160,7 +157,6 @@ namespace EasyBilling.UI
         }
         private void clearDealerAndCustomerDetails()
         {
-            txtDealerAndCustomerSearch.Text = "";
             txtDealerAndCustomerName.Text = "";
             txtEmail.Text = "";
             txtContact.Text = "";
@@ -345,7 +341,7 @@ namespace EasyBilling.UI
             {
                 DGVPrinter printer = new DGVPrinter();
                 printer.Title = "\r\n\r\n\r\n EASY BILLING";
-                printer.SubTitle = "\rSirsi,Uttara Kannada\r\n Phone:7829XXXXXX";
+                printer.SubTitle = " Sirsi,Uttara Kannada\r\n Phone:7829XXXXXX";
                 printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
                 printer.PageNumbers = true;
                 printer.PageNumberInHeader = true;
@@ -358,6 +354,46 @@ namespace EasyBilling.UI
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnDealerAndCustomerSearch_Click(object sender, EventArgs e)
+        {
+            frmDealerAndCustomerDetails dealerAndCustomerDetails = new frmDealerAndCustomerDetails();
+            if(dealerAndCustomerDetails.ShowDialog() == DialogResult.OK)
+            {
+                txtDealerAndCustomerName.Text = Common.ConvertToString(dealerAndCustomerDetails.dtDealerAndCustomerDetails.Rows[dealerAndCustomerDetails.rowNumber]["name"]);
+                txtEmail.Text = Common.ConvertToString(dealerAndCustomerDetails.dtDealerAndCustomerDetails.Rows[dealerAndCustomerDetails.rowNumber]["email"]);
+                txtContact.Text = Common.ConvertToString(dealerAndCustomerDetails.dtDealerAndCustomerDetails.Rows[dealerAndCustomerDetails.rowNumber]["contact"]);
+                txtAddress.Text = Common.ConvertToString(dealerAndCustomerDetails.dtDealerAndCustomerDetails.Rows[dealerAndCustomerDetails.rowNumber]["address"]);
+            }
+        }
+
+        private void txtQuantity_TextChanged(object sender, EventArgs e)
+        {
+            if(!txtQuantity.Focused == true)
+            {
+                return;
+            }
+
+            if (lblPurchaseAndSalesTop.Text == "SALES")
+            {
+                if (Common.ConvertToDouble(txtQuantity.Text.Trim()) > Common.ConvertToDouble(txtInventory.Text.Trim()))
+                {
+                    MessageBox.Show("No stock,please purchase product");
+                    return;
+                }
+            }
+        }
+
+        private void btnProductDetailsSearch_Click(object sender, EventArgs e)
+        {
+            frmProductDetails productdetails = new frmProductDetails();
+            if(productdetails.ShowDialog() == DialogResult.OK)
+            {
+                txtProductDetailsName.Text = Common.ConvertToString(productdetails.dtProductDetails.Rows[productdetails.rowNumber]["name"]);
+                txtInventory.Text = Common.ConvertToString(productdetails.dtProductDetails.Rows[productdetails.rowNumber]["qty"]);
+                txtRate.Text = Common.ConvertToString(productdetails.dtProductDetails.Rows[productdetails.rowNumber]["rate"]);
             }
         }
     }

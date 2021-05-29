@@ -90,5 +90,29 @@ namespace EasyBilling.DAL
             return dt;
         }
         #endregion
+        #region display all tranasactions based on type and transaction date
+        public DataTable DisplayAllTransactionsBasedOnTypeAndTransactionDate(string type,DateTime transactionDate)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("USP_GetAllTransactionDetailsBasedOnTypeAndTransactionDate", AppManager.ConnectionManager);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("type", SqlDbType.VarChar).Value = type;
+                cmd.Parameters.Add("transaction_date", SqlDbType.DateTime).Value = transactionDate;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                adapter.Dispose();
+                dt = ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return dt;
+        }
+        #endregion
+
     }
 }

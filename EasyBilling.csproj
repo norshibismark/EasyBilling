@@ -88,6 +88,12 @@
     <Compile Include="UI\frmDealerAndCustomer.Designer.cs">
       <DependentUpon>frmDealerAndCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\frmDealerAndCustomerDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmDealerAndCustomerDetails.Designer.cs">
+      <DependentUpon>frmDealerAndCustomerDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\frmInventory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,12 @@
     </Compile>
     <Compile Include="UI\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmProductDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmProductDetails.Designer.cs">
+      <DependentUpon>frmProductDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\frmProducts.cs">
       <SubType>Form</SubType>
@@ -141,11 +153,17 @@
     <EmbeddedResource Include="UI\frmDealerAndCustomer.resx">
       <DependentUpon>frmDealerAndCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmDealerAndCustomerDetails.resx">
+      <DependentUpon>frmDealerAndCustomerDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\frmInventory.resx">
       <DependentUpon>frmInventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmProductDetails.resx">
+      <DependentUpon>frmProductDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmProducts.resx">
       <DependentUpon>frmProducts.cs</DependentUpon>

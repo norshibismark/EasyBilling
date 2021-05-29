@@ -133,7 +133,7 @@ namespace EasyBilling.DAL
             return maxDealerAndCustomerId;
         }
         #endregion
-        #region search dealers and customers for transation based on keyword
+        #region search dealers and customers for transation based on type
         public DealerAndCustomerBLL SearchDealerAndCustomerForTransaction(string keyword)
         {
             DataTable dt = new DataTable();
@@ -186,6 +186,28 @@ namespace EasyBilling.DAL
                 MessageBox.Show(ex.Message);
             }
             return dc;
+        }
+        #endregion
+        #region search dealers and customers based on type
+        public DataTable SearchDealerAndCustomerBasedOntype(string type)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("USP_SearchDealersAndCustomersBasedOnType", AppManager.ConnectionManager);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("type", SqlDbType.VarChar).Value = type;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                adapter.Dispose();
+                dt = ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return dt;
         }
         #endregion
     }

@@ -18,29 +18,34 @@ namespace EasyBilling.UI
             InitializeComponent();
         }
 
-        private void displayTransactions(string type)
+        private void displayTransactionsInGrid(string option)
         {
             DataTable dt = new DataTable();
-            if(type == "ALL")
+            if(option == "ALL")
             {
                 dt = tDAL.DisplayAllTransactions();
             }
-            else if(type == "PURCHASE" || type == "SALES")
+            //else if (option == "TRANTYPE")
+            //{
+            //    dt = tDAL.DisplayAllTransactionsBasedOnType(cmbTranasactionType.Text.Trim());
+            //}
+            else if(option == "TRANTYPEDATE")
             {
-                dt = tDAL.DisplayAllTransactionsBasedOnType(type);
+                dt = tDAL.DisplayAllTransactionsBasedOnTypeAndTransactionDate(cmbTranasactionType.Text.Trim(),dtpTransactionDate.Value);
             }
             grdTransactionDetails.DataSource = dt;
+
+            txtTotal.Text = Common.ConvertToString(calculateSumOfColumnValuesFromDataTable(dt, "grandTotal"));
         }
 
         private void btnShowAll_Click(object sender, EventArgs e)
         {
-            displayTransactions("ALL");
+            displayTransactionsInGrid("ALL");
         }
 
         private void cmbTranasactionType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string type = Common.ConvertToString(cmbTranasactionType.Text.Trim());
-            displayTransactions(type);
+            displayTransactionsInGrid("TRANTYPEDATE");
         }
 
         private void pictureBoxClose_Click(object sender, EventArgs e)
@@ -48,24 +53,26 @@ namespace EasyBilling.UI
             this.Close();
         }
 
-        private void pnlPurchaseAndSalesTop_Paint(object sender, PaintEventArgs e)
+        private double calculateSumOfColumnValuesFromDataTable(DataTable dt, string colName)
         {
-
+            double subTotal = 0;
+            DataTable tempDt = new DataTable();
+            tempDt = dt;
+            subTotal = Common.ConvertToDouble(tempDt.Compute("SUM(" + colName + ")", ""));
+            tempDt.Dispose();
+            return subTotal;
         }
 
-        private void lblTransactionsTop_Click(object sender, EventArgs e)
+        private void dtpTransactionDate_ValueChanged(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(cmbTranasactionType.Text.Trim()))
+            {
+                MessageBox.Show("Select transaction type");
+                cmbTranasactionType.Focus();
+                return;
+            }
 
-        }
-
-        private void lblTransactionType_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void grdTransactionDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            displayTransactionsInGrid("TRANTYPEDATE");
         }
     }
 }

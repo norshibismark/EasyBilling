@@ -670,4 +670,36 @@ BEGIN
 END
 
 GO
----------------------------------------------------------------
+
+----------------------------------------------------------
+
+----Newly added procedures
+
+--------Search dealers and customers based on type--------
+CREATE PROCEDURE USP_SearchDealersAndCustomersBasedOnType
+(
+	@type varchar(50)
+)
+AS
+BEGIN
+	SELECT * FROM tbl_dealer_customer WHERE type=@type;
+END
+
+GO
+
+-----------------------------------------------------------
+
+-------------Getting all transaction details based on type----------------
+CREATE PROCEDURE USP_GetAllTransactionDetailsBasedOnTypeAndTransactionDate
+(
+@type varchar(50),
+@transaction_date datetime
+)
+AS
+BEGIN
+	SELECT * FROM tbl_transactions WHERE type=@type and CAST(transaction_date as date)=CAST(@transaction_date as date);
+END
+
+GO
+
+----------------------------------------------------------
