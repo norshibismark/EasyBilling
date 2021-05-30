@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPurchaseAndSales));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlPurchaseAndSalesTop = new System.Windows.Forms.Panel();
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.lblPurchaseAndSalesTop = new System.Windows.Forms.Label();
@@ -44,6 +44,8 @@
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblContact = new System.Windows.Forms.Label();
             this.txtContact = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtDealerAndCustomerName = new System.Windows.Forms.TextBox();
             this.lblDealerAndCustomerName = new System.Windows.Forms.Label();
             this.lblDealerAndCustomerDetails = new System.Windows.Forms.Label();
@@ -79,8 +81,6 @@
             this.lblSubTotal = new System.Windows.Forms.Label();
             this.lblCalculationDetails = new System.Windows.Forms.Label();
             this.toolTipPurchaseAndSales = new System.Windows.Forms.ToolTip(this.components);
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
             this.pnlPurchaseAndSalesTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
             this.pnlDealerAndCustomer.SuspendLayout();
@@ -92,7 +92,7 @@
             // 
             // pnlPurchaseAndSalesTop
             // 
-            this.pnlPurchaseAndSalesTop.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.pnlPurchaseAndSalesTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.pnlPurchaseAndSalesTop.Controls.Add(this.pictureBoxClose);
             this.pnlPurchaseAndSalesTop.Controls.Add(this.lblPurchaseAndSalesTop);
             this.pnlPurchaseAndSalesTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -117,7 +117,7 @@
             this.lblPurchaseAndSalesTop.AutoSize = true;
             this.lblPurchaseAndSalesTop.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPurchaseAndSalesTop.ForeColor = System.Drawing.Color.White;
-            this.lblPurchaseAndSalesTop.Location = new System.Drawing.Point(365, 9);
+            this.lblPurchaseAndSalesTop.Location = new System.Drawing.Point(390, 9);
             this.lblPurchaseAndSalesTop.Name = "lblPurchaseAndSalesTop";
             this.lblPurchaseAndSalesTop.Size = new System.Drawing.Size(192, 18);
             this.lblPurchaseAndSalesTop.TabIndex = 1;
@@ -159,7 +159,7 @@
             // 
             // btnClearDealerAndCustomerDetails
             // 
-            this.btnClearDealerAndCustomerDetails.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnClearDealerAndCustomerDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.btnClearDealerAndCustomerDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClearDealerAndCustomerDetails.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClearDealerAndCustomerDetails.ForeColor = System.Drawing.Color.White;
@@ -184,6 +184,7 @@
             // 
             this.lblBillDate.AutoSize = true;
             this.lblBillDate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBillDate.ForeColor = System.Drawing.Color.White;
             this.lblBillDate.Location = new System.Drawing.Point(283, 72);
             this.lblBillDate.Name = "lblBillDate";
             this.lblBillDate.Size = new System.Drawing.Size(61, 16);
@@ -205,6 +206,7 @@
             // 
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress.ForeColor = System.Drawing.Color.White;
             this.lblAddress.Location = new System.Drawing.Point(532, 13);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(60, 16);
@@ -215,6 +217,7 @@
             // 
             this.lblContact.AutoSize = true;
             this.lblContact.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContact.ForeColor = System.Drawing.Color.White;
             this.lblContact.Location = new System.Drawing.Point(283, 40);
             this.lblContact.Name = "lblContact";
             this.lblContact.Size = new System.Drawing.Size(61, 16);
@@ -230,6 +233,26 @@
             this.txtContact.Size = new System.Drawing.Size(184, 23);
             this.txtContact.TabIndex = 82;
             // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.ForeColor = System.Drawing.Color.White;
+            this.lblEmail.Location = new System.Drawing.Point(34, 69);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(41, 16);
+            this.lblEmail.TabIndex = 81;
+            this.lblEmail.Text = "Email";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmail.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(81, 67);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(193, 23);
+            this.txtEmail.TabIndex = 79;
+            // 
             // txtDealerAndCustomerName
             // 
             this.txtDealerAndCustomerName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -243,6 +266,7 @@
             // 
             this.lblDealerAndCustomerName.AutoSize = true;
             this.lblDealerAndCustomerName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDealerAndCustomerName.ForeColor = System.Drawing.Color.White;
             this.lblDealerAndCustomerName.Location = new System.Drawing.Point(31, 40);
             this.lblDealerAndCustomerName.Name = "lblDealerAndCustomerName";
             this.lblDealerAndCustomerName.Size = new System.Drawing.Size(44, 16);
@@ -295,7 +319,7 @@
             // 
             // btnClearProductDetails
             // 
-            this.btnClearProductDetails.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnClearProductDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.btnClearProductDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClearProductDetails.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClearProductDetails.ForeColor = System.Drawing.Color.White;
@@ -309,7 +333,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
@@ -336,6 +360,7 @@
             // 
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantity.ForeColor = System.Drawing.Color.White;
             this.lblQuantity.Location = new System.Drawing.Point(279, 68);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(65, 16);
@@ -356,6 +381,7 @@
             // 
             this.lblRate.AutoSize = true;
             this.lblRate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRate.ForeColor = System.Drawing.Color.White;
             this.lblRate.Location = new System.Drawing.Point(301, 39);
             this.lblRate.Name = "lblRate";
             this.lblRate.Size = new System.Drawing.Size(38, 16);
@@ -377,6 +403,7 @@
             // 
             this.lblInventory.AutoSize = true;
             this.lblInventory.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInventory.ForeColor = System.Drawing.Color.White;
             this.lblInventory.Location = new System.Drawing.Point(6, 68);
             this.lblInventory.Name = "lblInventory";
             this.lblInventory.Size = new System.Drawing.Size(72, 16);
@@ -396,6 +423,7 @@
             // 
             this.lblProductDetailsName.AutoSize = true;
             this.lblProductDetailsName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductDetailsName.ForeColor = System.Drawing.Color.White;
             this.lblProductDetailsName.Location = new System.Drawing.Point(31, 39);
             this.lblProductDetailsName.Name = "lblProductDetailsName";
             this.lblProductDetailsName.Size = new System.Drawing.Size(44, 16);
@@ -425,23 +453,23 @@
             // grdAddedProducts
             // 
             this.grdAddedProducts.AllowUserToAddRows = false;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdAddedProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdAddedProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.grdAddedProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdAddedProducts.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdAddedProducts.DefaultCellStyle = dataGridViewCellStyle6;
             this.grdAddedProducts.Location = new System.Drawing.Point(12, 30);
             this.grdAddedProducts.Name = "grdAddedProducts";
             this.grdAddedProducts.Size = new System.Drawing.Size(455, 228);
@@ -482,7 +510,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
@@ -511,6 +539,7 @@
             // 
             this.lblReturnAmount.AutoSize = true;
             this.lblReturnAmount.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReturnAmount.ForeColor = System.Drawing.Color.White;
             this.lblReturnAmount.Location = new System.Drawing.Point(12, 194);
             this.lblReturnAmount.Name = "lblReturnAmount";
             this.lblReturnAmount.Size = new System.Drawing.Size(106, 16);
@@ -532,6 +561,7 @@
             // 
             this.lblPaidAmount.AutoSize = true;
             this.lblPaidAmount.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaidAmount.ForeColor = System.Drawing.Color.White;
             this.lblPaidAmount.Location = new System.Drawing.Point(12, 165);
             this.lblPaidAmount.Name = "lblPaidAmount";
             this.lblPaidAmount.Size = new System.Drawing.Size(90, 16);
@@ -554,6 +584,7 @@
             // 
             this.lblGrandTotal.AutoSize = true;
             this.lblGrandTotal.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrandTotal.ForeColor = System.Drawing.Color.White;
             this.lblGrandTotal.Location = new System.Drawing.Point(12, 131);
             this.lblGrandTotal.Name = "lblGrandTotal";
             this.lblGrandTotal.Size = new System.Drawing.Size(84, 16);
@@ -575,6 +606,7 @@
             // 
             this.lblGstPercentage.AutoSize = true;
             this.lblGstPercentage.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGstPercentage.ForeColor = System.Drawing.Color.White;
             this.lblGstPercentage.Location = new System.Drawing.Point(12, 102);
             this.lblGstPercentage.Name = "lblGstPercentage";
             this.lblGstPercentage.Size = new System.Drawing.Size(60, 16);
@@ -596,6 +628,7 @@
             // 
             this.lblDiscountPercentage.AutoSize = true;
             this.lblDiscountPercentage.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiscountPercentage.ForeColor = System.Drawing.Color.White;
             this.lblDiscountPercentage.Location = new System.Drawing.Point(12, 73);
             this.lblDiscountPercentage.Name = "lblDiscountPercentage";
             this.lblDiscountPercentage.Size = new System.Drawing.Size(90, 16);
@@ -618,6 +651,7 @@
             // 
             this.lblSubTotal.AutoSize = true;
             this.lblSubTotal.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubTotal.ForeColor = System.Drawing.Color.White;
             this.lblSubTotal.Location = new System.Drawing.Point(12, 44);
             this.lblSubTotal.Name = "lblSubTotal";
             this.lblSubTotal.Size = new System.Drawing.Size(71, 16);
@@ -635,30 +669,11 @@
             this.lblCalculationDetails.TabIndex = 5;
             this.lblCalculationDetails.Text = "CALCULATION DETAILS";
             // 
-            // txtEmail
-            // 
-            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmail.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(81, 67);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(193, 23);
-            this.txtEmail.TabIndex = 79;
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(34, 69);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(41, 16);
-            this.lblEmail.TabIndex = 81;
-            this.lblEmail.Text = "Email";
-            // 
             // frmPurchaseAndSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(843, 574);
             this.Controls.Add(this.pnlCalculationDetails);
             this.Controls.Add(this.pnlAddedProducts);

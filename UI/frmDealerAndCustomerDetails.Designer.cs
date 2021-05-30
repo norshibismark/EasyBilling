@@ -51,6 +51,7 @@
             // 
             this.lbType.AutoSize = true;
             this.lbType.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbType.ForeColor = System.Drawing.Color.White;
             this.lbType.Location = new System.Drawing.Point(12, 44);
             this.lbType.Name = "lbType";
             this.lbType.Size = new System.Drawing.Size(40, 16);
@@ -71,7 +72,7 @@
             // 
             // btnShowAll
             // 
-            this.btnShowAll.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnShowAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.btnShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowAll.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowAll.ForeColor = System.Drawing.Color.White;
@@ -111,7 +112,7 @@
             // 
             // pnlPurchaseAndSalesTop
             // 
-            this.pnlPurchaseAndSalesTop.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.pnlPurchaseAndSalesTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.pnlPurchaseAndSalesTop.Controls.Add(this.pictureBoxClose);
             this.pnlPurchaseAndSalesTop.Controls.Add(this.lblDelaerAndCustomerTop);
             this.pnlPurchaseAndSalesTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -136,7 +137,7 @@
             this.lblDelaerAndCustomerTop.AutoSize = true;
             this.lblDelaerAndCustomerTop.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDelaerAndCustomerTop.ForeColor = System.Drawing.Color.White;
-            this.lblDelaerAndCustomerTop.Location = new System.Drawing.Point(221, 9);
+            this.lblDelaerAndCustomerTop.Location = new System.Drawing.Point(229, 9);
             this.lblDelaerAndCustomerTop.Name = "lblDelaerAndCustomerTop";
             this.lblDelaerAndCustomerTop.Size = new System.Drawing.Size(282, 18);
             this.lblDelaerAndCustomerTop.TabIndex = 1;
@@ -146,6 +147,7 @@
             // 
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearch.ForeColor = System.Drawing.Color.White;
             this.lblSearch.Location = new System.Drawing.Point(287, 44);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(54, 16);
@@ -154,7 +156,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
@@ -177,7 +179,7 @@
             // 
             // btnTypeSearch
             // 
-            this.btnTypeSearch.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnTypeSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.btnTypeSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTypeSearch.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTypeSearch.ForeColor = System.Drawing.Color.White;
@@ -193,7 +195,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(720, 409);
             this.Controls.Add(this.btnTypeSearch);
             this.Controls.Add(this.lblSearch);
