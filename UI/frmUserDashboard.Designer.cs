@@ -143,7 +143,7 @@
             // 
             this.lblLoggedInUser.AutoSize = true;
             this.lblLoggedInUser.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoggedInUser.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lblLoggedInUser.ForeColor = System.Drawing.Color.Yellow;
             this.lblLoggedInUser.Location = new System.Drawing.Point(52, 50);
             this.lblLoggedInUser.Name = "lblLoggedInUser";
             this.lblLoggedInUser.Size = new System.Drawing.Size(112, 14);
@@ -165,7 +165,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(63)))), ((int)(((byte)(109)))));
             this.ClientSize = new System.Drawing.Size(1023, 450);
             this.Controls.Add(this.pnlFooter);
             this.Controls.Add(this.menuStripTop);
