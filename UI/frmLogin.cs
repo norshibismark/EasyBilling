@@ -37,7 +37,7 @@ namespace EasyBilling.UI
                 l.user_type = Common.ConvertToString(cmbUserType.Text.Trim());
                 if (dal.LoginCheck(l))
                 {
-                    MessageBox.Show("Logged in successfully");
+                    //MessageBox.Show("Logged in successfully");
                     loggedInUser = l.username;
                     //Open respective form based on user type
                     switch (l.user_type)

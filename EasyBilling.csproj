@@ -35,6 +35,9 @@
     <ApplicationIcon>Iconsmind-Outline-Car-Coins.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Transactions" />
@@ -49,6 +52,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\Application\AppManager.cs" />
+    <Compile Include="BLL\Application\DatabaseDetails.cs" />
+    <Compile Include="BLL\Application\JsonMethods.cs" />
     <Compile Include="BLL\CategoriesBLL.cs" />
     <Compile Include="BLL\DealerAndCustomerBLL.cs" />
     <Compile Include="BLL\LoginBLL.cs" />
@@ -210,6 +215,7 @@
     <None Include="EasyBillingDataSet.xss">
       <DependentUpon>EasyBillingDataSet.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
