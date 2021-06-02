@@ -15,7 +15,9 @@ namespace EasyBilling.BLL.Application
         {
             try
             {
+                //JSON Path
                 string jsonPath = System.Windows.Forms.Application.StartupPath + @"\EasyBillingDBConnect.json";
+                //reading JSON file
                 DatabaseDetails databaseDetails = JsonMethods.DeserializeObjectFromJson<DatabaseDetails>(jsonPath);
                 string connectionString;
                 if(String.IsNullOrEmpty(databaseDetails.UserName) && String.IsNullOrEmpty(databaseDetails.Password))
